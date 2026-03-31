@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products | ProConnect Fasteners — Precast Concrete Connection Systems</title>
-  <meta name="description" content="Full product range: high-strength bolts, anchor end plates, coupling sleeves, lifting anchors and accessories for precast concrete construction." />
+  <meta name="description" content="Full product range: rail fasteners, precast pile end plates, prestressed anchors, coupling sleeves, lifting anchors for precast concrete construction." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
@@ -20,6 +20,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--clr-bg); color: var(--clr-text); font-family: var(--font-body); }
 
+    /* NAV */
     .nav { position: sticky; top: 0; z-index: 100; background: rgba(10,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--clr-border); }
     .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -28,622 +29,863 @@
     .logo-text { display: flex; flex-direction: column; line-height: 1; }
     .logo-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.04em; }
     .logo-sub { font-size: 0.6rem; color: var(--clr-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
-    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
     .nav-links a { color: var(--clr-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color .2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--clr-text); }
-    .nav-cta { background: var(--clr-accent); color: #000; padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--clr-white); }
+    .nav-cta { background: var(--clr-accent); color: #000 !important; padding: 0.5rem 1.25rem; font-weight: 700 !important; }
     .nav-cta:hover { background: var(--clr-accent2); }
 
-    /* Page header */
-    .page-header {
-      background: var(--clr-surface); border-bottom: 1px solid var(--clr-border);
-      padding: 4rem 2rem 3rem;
-    }
-    .page-header-inner { max-width: var(--max-w); margin: 0 auto; }
-    .breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: var(--clr-muted); margin-bottom: 1.5rem; }
-    .breadcrumb a { color: var(--clr-muted); text-decoration: none; transition: color .2s; }
-    .breadcrumb a:hover { color: var(--clr-accent); }
-    .breadcrumb span { color: var(--clr-border); }
-    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 0.75rem; }
-    .page-label::before { content:''; display:block; width:20px; height:2px; background:var(--clr-accent); }
-    .page-title { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--clr-white); }
-    .page-sub { font-size: 1rem; color: var(--clr-muted); max-width: 600px; margin-top: 0.75rem; line-height: 1.7; }
+    /* PAGE HERO */
+    .page-hero { background: linear-gradient(135deg, #0a0c10 0%, #111318 60%, #1a1e26 100%); border-bottom: 1px solid var(--clr-border); padding: 4rem 2rem 3rem; }
+    .page-hero-inner { max-width: var(--max-w); margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--clr-muted); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .breadcrumb a { color: var(--clr-accent); text-decoration: none; }
+    .breadcrumb span { opacity: 0.5; }
+    .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--clr-white); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 1rem; }
+    .page-hero p { color: var(--clr-muted); font-size: 1rem; max-width: 640px; line-height: 1.7; }
+    .hero-stats { display: flex; gap: 3rem; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--clr-border); }
+    .hero-stat-val { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--clr-accent); }
+    .hero-stat-lbl { font-size: 0.75rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem; }
 
-    /* Filter tabs */
-    .filter-bar { background: var(--clr-bg); border-bottom: 1px solid var(--clr-border); position: sticky; top: 72px; z-index: 50; }
-    .filter-bar-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
-    .filter-tab { padding: 1.1rem 1.5rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clr-muted); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .2s, border-color .2s; cursor: pointer; }
-    .filter-tab:hover { color: var(--clr-text); }
-    .filter-tab.active { color: var(--clr-accent); border-bottom-color: var(--clr-accent); }
+    /* FILTER BAR */
+    .filter-bar { position: sticky; top: 72px; z-index: 90; background: rgba(17,19,24,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--clr-border); }
+    .filter-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; gap: 0.5rem; height: 56px; overflow-x: auto; scrollbar-width: none; }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-btn { flex-shrink: 0; padding: 0.35rem 1rem; border: 1px solid var(--clr-border); background: transparent; color: var(--clr-muted); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .2s; white-space: nowrap; font-family: var(--font-body); }
+    .filter-btn:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+    .filter-btn.active { background: var(--clr-accent); border-color: var(--clr-accent); color: #000; font-weight: 700; }
 
-    /* Main content layout */
+    /* CONTENT */
     .content { max-width: var(--max-w); margin: 0 auto; padding: 4rem 2rem; }
 
-    /* Product Category Section */
-    .product-category { margin-bottom: 5rem; scroll-margin-top: 140px; }
-    .cat-header {
-      display: flex; align-items: center; gap: 1.5rem;
-      padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border);
-      margin-bottom: 2.5rem;
-    }
-    .cat-icon {
-      width: 56px; height: 56px; background: rgba(232,160,32,0.12);
-      border: 1px solid rgba(232,160,32,0.25); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.75rem; flex-shrink: 0;
-    }
-    .cat-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 4px; }
-    .cat-title { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--clr-white); }
-    .cat-desc { font-size: 0.88rem; color: var(--clr-muted); line-height: 1.7; max-width: 700px; margin-top: 0.4rem; }
+    /* CATEGORY SECTION */
+    .cat-section { margin-bottom: 5rem; }
+    .cat-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--clr-border); }
+    .cat-label { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-accent); background: rgba(232,160,32,0.12); border: 1px solid rgba(232,160,32,0.3); padding: 0.2rem 0.6rem; margin-bottom: 0.6rem; }
+    .cat-title { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.03em; text-transform: uppercase; }
+    .cat-count { font-size: 0.8rem; color: var(--clr-muted); }
 
-    /* Product table / cards */
-    .product-table { width: 100%; border-collapse: collapse; }
-    .product-table th {
-      background: var(--clr-surface); border: 1px solid var(--clr-border);
-      padding: 0.75rem 1rem; text-align: left;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--clr-muted);
-    }
-    .product-table td {
-      border: 1px solid var(--clr-border); padding: 0.9rem 1rem;
-      font-size: 0.83rem; color: var(--clr-text); vertical-align: middle;
-    }
-    .product-table tr:hover td { background: var(--clr-surface); }
-    .product-table .model { font-weight: 700; color: var(--clr-white); }
-    .product-table .spec-tag {
-      display: inline-block; background: var(--clr-surface2); border: 1px solid var(--clr-border);
-      border-radius: 2px; padding: 0.15rem 0.45rem; font-size: 0.7rem; margin: 1px;
-    }
-    .price-cell { color: var(--clr-accent); font-weight: 600; white-space: nowrap; }
-    .avail-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; margin-right: 6px; }
-    .avail-dot.limited { background: var(--clr-accent); }
+    /* PRODUCT GRID */
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
 
-    /* Product cards (alternative view for some categories) */
-    .product-cards-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .pcard {
-      background: var(--clr-surface); border: 1px solid var(--clr-border);
-      border-radius: 6px; padding: 1.75rem; transition: border-color .2s;
-    }
-    .pcard:hover { border-color: var(--clr-accent); }
-    .pcard-icon { font-size: 2.25rem; margin-bottom: 1rem; display: block; }
-    .pcard-name { font-size: 1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.4rem; }
-    .pcard-code { font-size: 0.72rem; color: var(--clr-accent); font-family: monospace; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-    .pcard-desc { font-size: 0.82rem; color: var(--clr-muted); line-height: 1.65; }
-    .pcard-specs { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
-    .pcard-specs li { display: flex; justify-content: space-between; font-size: 0.77rem; }
-    .pcard-specs li .key { color: var(--clr-muted); }
-    .pcard-specs li .val { color: var(--clr-text); font-weight: 600; }
-    .pcard-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-border); display: flex; justify-content: space-between; align-items: center; }
-    .pcard-price { font-size: 0.78rem; color: var(--clr-muted); }
-    .pcard-price strong { color: var(--clr-accent); font-size: 0.95rem; }
-    .pcard-cta {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--clr-accent); text-decoration: none;
-    }
+    /* PRODUCT CARD */
+    .prod-card { background: var(--clr-surface); border: 1px solid var(--clr-border); overflow: hidden; transition: border-color .25s, transform .25s; cursor: pointer; }
+    .prod-card:hover { border-color: var(--clr-accent); transform: translateY(-3px); }
+    .prod-img { position: relative; height: 220px; overflow: hidden; background: var(--clr-surface2); }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .prod-card:hover .prod-img img { transform: scale(1.04); }
+    .prod-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #111318 0%, #181c22 100%); }
+    .prod-img-placeholder svg { width: 64px; height: 64px; opacity: 0.2; fill: var(--clr-accent); }
+    .prod-badge { position: absolute; top: 12px; left: 12px; background: var(--clr-accent); color: #000; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; }
+    .prod-body { padding: 1.5rem; }
+    .prod-model { font-size: 0.7rem; color: var(--clr-accent); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .prod-name { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--clr-white); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.75rem; line-height: 1.2; }
+    .prod-desc { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.65; margin-bottom: 1.25rem; }
 
-    /* Pricing callout */
-    .pricing-callout {
-      background: var(--clr-surface2); border: 1px solid var(--clr-border);
-      border-left: 3px solid var(--clr-accent);
-      border-radius: var(--radius); padding: 1.5rem 2rem;
-      margin-top: 2rem;
-      display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
-    }
-    .pricing-callout-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.25rem; }
-    .pricing-callout-text p { font-size: 0.82rem; color: var(--clr-muted); }
-    .discount-tiers { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .discount-tier { text-align: center; }
-    .discount-tier .qty { font-size: 0.72rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.08em; }
-    .discount-tier .pct { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--clr-accent); }
+    /* SPECS TABLE */
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-bottom: 1.25rem; }
+    .specs-table tr { border-bottom: 1px solid var(--clr-border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 0.45rem 0; }
+    .specs-table td:first-child { color: var(--clr-muted); width: 45%; }
+    .specs-table td:last-child { color: var(--clr-text); font-weight: 500; }
 
-    /* CTA strip */
-    .cta-strip {
-      background: var(--clr-accent); padding: 3rem 2rem; text-align: center; margin-top: 4rem;
-    }
-    .cta-strip h2 { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: #000; }
-    .cta-strip p { color: rgba(0,0,0,.6); font-size: 0.95rem; margin: 0.6rem auto 1.75rem; max-width: 480px; }
-    .btn-dark { background: #000; color: var(--clr-accent); padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background .2s; }
-    .btn-dark:hover { background: #1a1a1a; }
+    /* TAGS */
+    .prod-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .tag { font-size: 0.68rem; color: var(--clr-muted); border: 1px solid var(--clr-border); padding: 0.2rem 0.5rem; letter-spacing: 0.05em; }
 
-    /* Footer */
-    .footer { background: var(--clr-bg); padding: 3rem 2rem 2rem; border-top: 1px solid var(--clr-border); }
-    .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-size: 0.78rem; color: var(--clr-muted); }
-    .footer-nav { display: flex; gap: 1.5rem; }
-    .footer-nav a { font-size: 0.78rem; color: var(--clr-muted); text-decoration: none; transition: color .2s; }
-    .footer-nav a:hover { color: var(--clr-text); }
+    /* CARD FOOTER */
+    .prod-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--clr-border); }
+    .prod-price { }
+    .prod-price-label { font-size: 0.65rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .prod-price-val { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--clr-accent); }
+    .btn-rfq { display: inline-flex; align-items: center; gap: 0.4rem; background: transparent; border: 1px solid var(--clr-accent); color: var(--clr-accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1rem; text-decoration: none; transition: all .2s; font-family: var(--font-body); cursor: pointer; }
+    .btn-rfq:hover { background: var(--clr-accent); color: #000; }
+    .btn-rfq svg { width: 12px; height: 12px; }
 
-    @media (max-width: 1024px) { .product-cards-grid { grid-template-columns: 1fr 1fr; } }
+    /* WIDE PRODUCT (feature card) */
+    .prod-card-wide { display: grid; grid-template-columns: 320px 1fr; background: var(--clr-surface); border: 1px solid var(--clr-border); overflow: hidden; transition: border-color .25s; }
+    .prod-card-wide:hover { border-color: var(--clr-accent); }
+    .prod-card-wide .prod-img { height: 100%; min-height: 240px; }
+    .prod-card-wide .prod-body { padding: 2rem; }
+    @media(max-width: 720px) { .prod-card-wide { grid-template-columns: 1fr; } .prod-card-wide .prod-img { height: 220px; } }
+
+    /* SECTION: 2-col specs layout */
+    .specs-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .specs-2col .specs-table { margin-bottom: 0; }
+
+    /* FOOTER */
+    footer { background: var(--clr-surface); border-top: 1px solid var(--clr-border); padding: 3rem 2rem; text-align: center; }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--clr-muted); text-decoration: none; font-size: 0.8rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--clr-accent); }
+    .footer-copy { font-size: 0.75rem; color: var(--clr-muted); }
+
+    /* ANIMATE */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
     @media (max-width: 768px) {
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
       .nav-links { display: none; }
-      .product-cards-grid { grid-template-columns: 1fr; }
-      .product-table { font-size: 0.75rem; }
-      .pricing-callout { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .product-grid { grid-template-columns: 1fr; }
     }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo">
-      <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></div>
-      <div class="logo-text"><span class="logo-name">PROCONNECT</span><span class="logo-sub">Fasteners &amp; Connectors</span></div>
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">ProConnect</span>
+        <span class="logo-sub">Fasteners</span>
+      </div>
     </a>
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="products.html" class="active">Products</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="contact.html" class="nav-cta">Request Quote</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get Quote</a>
+    </div>
   </div>
 </nav>
 
-<div class="page-header">
-  <div class="page-header-inner">
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><span>/</span><span style="color:var(--clr-text)">Products</span>
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Products</span>
     </div>
-    <div class="page-label">Product Catalog</div>
-    <h1 class="page-title">Precast Concrete Connection Systems</h1>
-    <p class="page-sub">Engineering-grade fasteners and connection hardware for precast panel production, structural erection, and seismic-resilient building systems.</p>
+    <h1>Product Catalog</h1>
+    <p>Comprehensive precast concrete connection systems — from rail fasteners and pile end plates to prestressed anchors and lifting hardware. All products meet ISO / GB / JIS international standards.</p>
+    <div class="hero-stats">
+      <div><div class="hero-stat-val">200+</div><div class="hero-stat-lbl">SKUs Available</div></div>
+      <div><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Product Categories</div></div>
+      <div><div class="hero-stat-val">ISO</div><div class="hero-stat-lbl">Certified</div></div>
+      <div><div class="hero-stat-val">30+</div><div class="hero-stat-lbl">Countries Exported</div></div>
+    </div>
   </div>
 </div>
 
+<!-- FILTER BAR -->
 <div class="filter-bar">
-  <div class="filter-bar-inner">
-    <a href="#bolts" class="filter-tab active">Structural Bolts</a>
-    <a href="#endplates" class="filter-tab">End Plates</a>
-    <a href="#sleeves" class="filter-tab">Coupling Sleeves</a>
-    <a href="#anchors" class="filter-tab">Lifting Anchors</a>
-    <a href="#accessories" class="filter-tab">Accessories</a>
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCat('all',this)">All Products</button>
+    <button class="filter-btn" onclick="filterCat('rail',this)">Rail Fasteners</button>
+    <button class="filter-btn" onclick="filterCat('endplate',this)">Pile End Plates</button>
+    <button class="filter-btn" onclick="filterCat('anchor',this)">Prestressed Anchors</button>
+    <button class="filter-btn" onclick="filterCat('sleeve',this)">Coupling Sleeves</button>
+    <button class="filter-btn" onclick="filterCat('lifting',this)">Lifting Anchors</button>
   </div>
 </div>
 
-<div class="content">
+<!-- MAIN CONTENT -->
+<main class="content">
 
-  <!-- ── BOLTS ── -->
-  <div class="product-category" id="bolts">
-    <div class="cat-header reveal">
-      <div class="cat-icon">🔩</div>
+  <!-- ═══════════════════════════════════════
+       CAT 1 · RAIL FASTENERS
+  ═══════════════════════════════════════ -->
+  <section class="cat-section fade-up" data-cat="rail" id="rail">
+    <div class="cat-header">
       <div>
         <div class="cat-label">Category 01</div>
-        <div class="cat-title">High-Strength Structural Bolts</div>
-        <div class="cat-desc">Hex head and fully-threaded bolts for precast concrete structural connections. Hot-dip galvanized, zinc-plated or plain finish. Matched nuts and washers available.</div>
+        <div class="cat-title">Rail Fasteners &amp; Track Hardware</div>
       </div>
+      <div class="cat-count">6 Products</div>
     </div>
-    <table class="product-table reveal">
-      <thead>
-        <tr>
-          <th>Model / Grade</th>
-          <th>Diameter</th>
-          <th>Thread Pitch</th>
-          <th>Length Options</th>
-          <th>Finish</th>
-          <th>Standard</th>
-          <th>Availability</th>
-          <th>Unit Price (FOB)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="model">PCB-M16-88</td>
-          <td>M16</td>
-          <td>2.0mm</td>
-          <td><span class="spec-tag">50mm</span><span class="spec-tag">80mm</span><span class="spec-tag">100mm</span><span class="spec-tag">Custom</span></td>
-          <td>Zinc-plated / HDG</td>
-          <td>ISO 898-1 · EN 14399</td>
-          <td><span class="avail-dot"></span>In Stock</td>
-          <td class="price-cell">USD 0.28–0.42 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PCB-M20-88</td>
-          <td>M20</td>
-          <td>2.5mm</td>
-          <td><span class="spec-tag">60mm</span><span class="spec-tag">100mm</span><span class="spec-tag">120mm</span><span class="spec-tag">Custom</span></td>
-          <td>Zinc-plated / HDG</td>
-          <td>ISO 898-1 · EN 14399</td>
-          <td><span class="avail-dot"></span>In Stock</td>
-          <td class="price-cell">USD 0.45–0.72 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PCB-M20-109</td>
-          <td>M20</td>
-          <td>2.5mm</td>
-          <td><span class="spec-tag">60mm</span><span class="spec-tag">100mm</span><span class="spec-tag">Custom</span></td>
-          <td>Phosphate / HDG</td>
-          <td>ISO 898-1 Grade 10.9</td>
-          <td><span class="avail-dot"></span>In Stock</td>
-          <td class="price-cell">USD 0.55–0.90 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PCB-M24-88</td>
-          <td>M24</td>
-          <td>3.0mm</td>
-          <td><span class="spec-tag">80mm</span><span class="spec-tag">120mm</span><span class="spec-tag">150mm</span><span class="spec-tag">Custom</span></td>
-          <td>HDG</td>
-          <td>EN 14399-4 HV</td>
-          <td><span class="avail-dot"></span>In Stock</td>
-          <td class="price-cell">USD 0.82–1.20 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PCB-M30-88</td>
-          <td>M30</td>
-          <td>3.5mm</td>
-          <td><span class="spec-tag">100mm</span><span class="spec-tag">150mm</span><span class="spec-tag">Custom</span></td>
-          <td>HDG</td>
-          <td>EN 14399-4 HV</td>
-          <td><span class="avail-dot limited"></span>MOQ 500pcs</td>
-          <td class="price-cell">USD 1.60–2.20 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PCB-SS316</td>
-          <td>M16–M24</td>
-          <td>Standard</td>
-          <td>Custom to order</td>
-          <td>Stainless 316</td>
-          <td>ASTM F593 / DIN 933</td>
-          <td><span class="avail-dot limited"></span>Lead time 2wks</td>
-          <td class="price-cell">USD 1.80–4.50 /pc</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="pricing-callout reveal">
-      <div class="pricing-callout-text">
-        <h4>Volume Pricing Available</h4>
-        <p>Prices above are indicative FOB Qingdao/Shanghai. Contact us with quantity and full spec for firm quotation.</p>
-      </div>
-      <div class="discount-tiers">
-        <div class="discount-tier"><div class="qty">1,000–4,999 pcs</div><div class="pct">5% off</div></div>
-        <div class="discount-tier"><div class="qty">5,000–19,999 pcs</div><div class="pct">10% off</div></div>
-        <div class="discount-tier"><div class="qty">20,000+ pcs</div><div class="pct">Negotiate</div></div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ── END PLATES ── -->
-  <div class="product-category" id="endplates">
-    <div class="cat-header reveal">
-      <div class="cat-icon">🔲</div>
+    <div class="product-grid">
+
+      <!-- Rail Clip System -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Rail Clip Fastener System" loading="lazy" />
+          <span class="prod-badge">Bestseller</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-CLIP-WJ8</div>
+          <div class="prod-name">WJ-8 Type Elastic Rail Clip</div>
+          <div class="prod-desc">High-fatigue elastic clip for heavy-haul and high-speed railway track systems. Compatible with concrete, wood and steel sleepers. Provides consistent toe load over service life.</div>
+          <table class="specs-table">
+            <tr><td>Rail Profile</td><td>50, 60, 75 kg/m</td></tr>
+            <tr><td>Toe Load</td><td>8–12 kN per clip</td></tr>
+            <tr><td>Material</td><td>60Si2Mn Spring Steel</td></tr>
+            <tr><td>Standard</td><td>TB/T 2975, GB/T</td></tr>
+            <tr><td>Fatigue Life</td><td>≥ 3 million cycles</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">High-speed Rail</span><span class="tag">Heavy Haul</span><span class="tag">Metro</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 1,000 sets)</div><div class="prod-price-val">USD 2.80 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iron Base Plate -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Iron Base Plate" loading="lazy" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-IBP-S350</div>
+          <div class="prod-name">Iron Base Plate (Tie Plate)</div>
+          <div class="prod-desc">Cast iron or Q345 steel base plate providing a flat bearing surface for the rail. Suitable for conventional rail, crane rail and special track applications.</div>
+          <table class="specs-table">
+            <tr><td>Rail Gauge</td><td>1067, 1435, 1520 mm</td></tr>
+            <tr><td>Thickness</td><td>10–20 mm</td></tr>
+            <tr><td>Material</td><td>Q345 / QT450 Cast Iron</td></tr>
+            <tr><td>Surface</td><td>Hot-dip galvanized / Painted</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Conventional Rail</span><span class="tag">Crane Rail</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 500 pcs)</div><div class="prod-price-val">USD 3.50 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Track Bolt & Nut -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" stroke-width="3" stroke="currentColor" fill="none"/><path d="M20 32h24M32 20v24" stroke-width="3" stroke="currentColor"/></svg>
+          </div>
+          <span class="prod-badge">Stock</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-BOLT-M24</div>
+          <div class="prod-name">Fish Bolt &amp; Spring Washer Set</div>
+          <div class="prod-desc">Track joint fish bolts with matching spring washers for rail joint connections. Uniform stress distribution prevents loosening under dynamic rail loads.</div>
+          <table class="specs-table">
+            <tr><td>Diameter</td><td>M20, M22, M24</td></tr>
+            <tr><td>Grade</td><td>8.8 / 10.9</td></tr>
+            <tr><td>Material</td><td>35CrMo Alloy Steel</td></tr>
+            <tr><td>Coating</td><td>Dacromet / HDG</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Fish Bolt</span><span class="tag">Rail Joint</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 2,000 sets)</div><div class="prod-price-val">USD 1.20 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gauge Block -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><rect x="8" y="20" width="48" height="24" rx="2" stroke-width="3" stroke="currentColor" fill="none"/><path d="M20 20v24M44 20v24" stroke-width="2" stroke="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-GAUGE-NYLON</div>
+          <div class="prod-name">Rail Gauge Block (Nylon Shoulder)</div>
+          <div class="prod-desc">PA66 + GF30 nylon gauge block providing precise track gauge and electrical insulation between rail and sleeper. Custom gauge widths available.</div>
+          <table class="specs-table">
+            <tr><td>Gauge Range</td><td>1435 ±3 mm adjustable</td></tr>
+            <tr><td>Material</td><td>PA66+GF30</td></tr>
+            <tr><td>Insulation</td><td>≥ 500 MΩ</td></tr>
+            <tr><td>Load Capacity</td><td>100 kN vertical</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 2,000 pcs)</div><div class="prod-price-val">USD 0.85 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tunnel Segment Bolt -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80" alt="Tunnel Segment Bolt" loading="lazy" />
+          <span class="prod-badge">Featured</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-TUNNEL-SS304</div>
+          <div class="prod-name">Tunnel Segment Connection Bolt (SS)</div>
+          <div class="prod-desc">Stainless steel curved bolts for shield tunnel segment ring connections. Meets A2-70 / A4-80 grade. Supplied to multiple metro and water diversion tunnel projects in China.</div>
+          <table class="specs-table">
+            <tr><td>Diameter</td><td>M27, M30, M36</td></tr>
+            <tr><td>Grade</td><td>A2-70, A4-80</td></tr>
+            <tr><td>Hardness (Washer)</td><td>≥ 200 HV</td></tr>
+            <tr><td>Form</td><td>Curved / Straight</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Stainless</span><span class="tag">Metro</span><span class="tag">Shield Tunnel</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 500 sets)</div><div class="prod-price-val">USD 12.50 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rubber Pad -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="26" ry="14" stroke-width="3" stroke="currentColor" fill="none"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: RF-PAD-EVA</div>
+          <div class="prod-name">Rail Under-Pad (EVA / HDPE)</div>
+          <div class="prod-desc">Vibration damping and noise reduction elastic pad inserted between rail base and sleeper. Environmentally friendly high-elastic material, wrapping-type or flat type available.</div>
+          <table class="specs-table">
+            <tr><td>Static Stiffness</td><td>20–150 kN/mm</td></tr>
+            <tr><td>Thickness</td><td>6, 8, 10, 12 mm</td></tr>
+            <tr><td>Material</td><td>EVA / HDPE / Rubber</td></tr>
+            <tr><td>Temp Range</td><td>-40°C to +70°C</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 5,000 pcs)</div><div class="prod-price-val">USD 0.45 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CAT 2 · PILE END PLATES
+  ═══════════════════════════════════════ -->
+  <section class="cat-section fade-up" data-cat="endplate" id="endplate">
+    <div class="cat-header">
       <div>
         <div class="cat-label">Category 02</div>
-        <div class="cat-title">Anchor End Plates & Embedded Plates</div>
-        <div class="cat-desc">Laser-cut or plasma-cut steel plates with welded headed studs or threaded anchors for load transfer at precast joints. Custom hole patterns and dimensions on request.</div>
+        <div class="cat-title">PC Pile End Plates</div>
       </div>
+      <div class="cat-count">4 Products</div>
     </div>
-    <div class="product-cards-grid reveal">
-      <div class="pcard">
-        <span class="pcard-icon">🔲</span>
-        <div class="pcard-name">Standard Anchor Plate</div>
-        <div class="pcard-code">PCE-AP-S</div>
-        <div class="pcard-desc">Square or rectangular mild steel plates with punched bolt holes. Used at precast panel edges for bolted connections to structural frames.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Size range</span><span class="val">100×100 to 250×250mm</span></li>
-          <li><span class="key">Thickness</span><span class="val">8, 10, 12mm</span></li>
-          <li><span class="key">Material</span><span class="val">S235 / S355 steel</span></li>
-          <li><span class="key">Coating</span><span class="val">HDG or Epoxy primer</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 2.80</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">🧲</span>
-        <div class="pcard-name">Welded Stud Plate</div>
-        <div class="pcard-code">PCE-WS</div>
-        <div class="pcard-desc">Embedded plates with pre-welded headed shear studs or hooked anchors. Designed for cast-in-place connections with high pull-out resistance.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Size range</span><span class="val">150×150 to 300×300mm</span></li>
-          <li><span class="key">Stud diameter</span><span class="val">Ø10 / Ø13 / Ø16mm</span></li>
-          <li><span class="key">Material</span><span class="val">S355JR + Nelson studs</span></li>
-          <li><span class="key">Coating</span><span class="val">HDG after welding</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 6.50</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">📐</span>
-        <div class="pcard-name">L-Bracket Plate</div>
-        <div class="pcard-code">PCE-LB</div>
-        <div class="pcard-desc">Right-angle plate assemblies for column-to-beam or panel-to-floor connections. Laser-cut and CNC-bent to tight tolerances.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Leg dimensions</span><span class="val">Custom to project</span></li>
-          <li><span class="key">Thickness</span><span class="val">10, 12, 16, 20mm</span></li>
-          <li><span class="key">Hole pattern</span><span class="val">Custom punched/drilled</span></li>
-          <li><span class="key">Coating</span><span class="val">Primer / HDG / Paint</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 9.00</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">🏗️</span>
-        <div class="pcard-name">Corbel Support Plate</div>
-        <div class="pcard-code">PCE-CSP</div>
-        <div class="pcard-desc">Heavy-duty shelf or corbel plates with welded stiffener ribs for supporting precast double-tee flanges, beams, or hollow-core slabs.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Capacity</span><span class="val">15–120 kN design load</span></li>
-          <li><span class="key">Material</span><span class="val">S355 / Structural grade</span></li>
-          <li><span class="key">Stiffener</span><span class="val">Fully welded triangular</span></li>
-          <li><span class="key">Certification</span><span class="val">Load test reports avail.</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 18.00</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">🔗</span>
-        <div class="pcard-name">Weld-on Halfen Channel Plate</div>
-        <div class="pcard-code">PCE-HC</div>
-        <div class="pcard-desc">Slotted channel profiles welded to backing plates for flexible post-installation anchorage of facades, MEP supports and secondary steelwork.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Channel size</span><span class="val">28/15 · 38/17 · 53/34</span></li>
-          <li><span class="key">Length</span><span class="val">200–1200mm</span></li>
-          <li><span class="key">Channel material</span><span class="val">S235 rolled steel</span></li>
-          <li><span class="key">Finish</span><span class="val">Stainless or HDG</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 12.00</strong>/m</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard" style="border-style:dashed; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:1rem; min-height:200px;">
-        <div style="font-size:2rem;">📋</div>
-        <div style="font-size:0.88rem; font-weight:700; color:var(--clr-white);">Custom End Plate Design</div>
-        <div style="font-size:0.8rem; color:var(--clr-muted); line-height:1.6;">Send your drawing or BOM. We'll quote within 24 hours.</div>
-        <a href="contact.html" style="background:var(--clr-accent); color:#000; padding:0.6rem 1.4rem; border-radius:4px; font-size:0.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none;">Submit Drawing</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- ── SLEEVES ── -->
-  <div class="product-category" id="sleeves">
-    <div class="cat-header reveal">
-      <div class="cat-icon">⚙️</div>
+    <!-- Featured Wide Card -->
+    <div class="prod-card-wide" style="margin-bottom:1.5rem; border-color: rgba(232,160,32,0.35);">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=600&q=80" alt="PC Pile End Plate" loading="lazy" />
+        <span class="prod-badge">ISO Certified</span>
+      </div>
+      <div class="prod-body">
+        <div class="prod-model">SKU: EP-DRILLED-GSD</div>
+        <div class="prod-name">PC Spun Pile End Plate — Drilled Type (GS-D)</div>
+        <div class="prod-desc">Pre-stressed concrete spun pile end plate with drilled bolt holes for pile-to-pile and pile-to-cap connections. Manufactured from JIS G3106 SM400A structural steel, certified by BCJ (Building Center of Japan) and ISO 9001. Widely applied in Taiwan, Korea, Singapore, Malaysia, Philippines and Vietnam.</div>
+        <div class="specs-2col" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.25rem;">
+          <table class="specs-table">
+            <tr><td>Material</td><td>JIS G3106 SM400A</td></tr>
+            <tr><td>Thickness</td><td>≥ 12 mm</td></tr>
+            <tr><td>Outer Diameter</td><td>300 – 1200 mm</td></tr>
+          </table>
+          <table class="specs-table">
+            <tr><td>Tensile Strength</td><td>400 – 510 N/mm²</td></tr>
+            <tr><td>Certification</td><td>BCJ, ISO</td></tr>
+            <tr><td>Origin</td><td>Taiwan / China</td></tr>
+          </table>
+        </div>
+        <div class="prod-tags">
+          <span class="tag">BCJ Certified</span><span class="tag">ISO 9001</span><span class="tag">OEM/ODM</span><span class="tag">JIS G3106</span>
+        </div>
+        <div class="prod-footer">
+          <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 100 pcs)</div><div class="prod-price-val">USD 18 – 95 / pc</div></div>
+          <a href="contact.html" class="btn-rfq">Request Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Pressed Type End Plate -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Pressed End Plate" loading="lazy" />
+          <span class="prod-badge">Popular</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: EP-PRESSED-GSP</div>
+          <div class="prod-name">PC Spun Pile End Plate — Pressed Type (GS-P)</div>
+          <div class="prod-desc">High-strength pressed end plate for PHC / PC spun piles. Press-formed bolt holes with flush surface finish. Suitable for pile splicing and cap beam connections.</div>
+          <table class="specs-table">
+            <tr><td>Material</td><td>JIS G3106 SM400A</td></tr>
+            <tr><td>Thickness</td><td>10 – 16 mm</td></tr>
+            <tr><td>Outer Diameter</td><td>300 – 800 mm</td></tr>
+            <tr><td>Standard</td><td>JIS A5337, GB/T</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 200 pcs)</div><div class="prod-price-val">USD 12 – 60 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heavy Duty End Plate 龙腾特钢 style -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Heavy Duty End Plate" loading="lazy" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: EP-HD-LTTG</div>
+          <div class="prod-name">Heavy-Duty Pile End Plate (Auto-Weld Line)</div>
+          <div class="prod-desc">Manufactured on fully-automated end plate production lines with robotic welding and auto quality inspection. Full size range in stock. Pre-tensioning anchoring and pile-splice applications.</div>
+          <table class="specs-table">
+            <tr><td>Size Range</td><td>300 / 400 / 500 / 600 / 700 / 800 mm</td></tr>
+            <tr><td>Process</td><td>Robot Welded + Auto QC</td></tr>
+            <tr><td>Application</td><td>Pre-tensioned PC Pile</td></tr>
+            <tr><td>Lead Time</td><td>7–14 days (ex-stock)</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Auto Production</span><span class="tag">Ex-Stock</span><span class="tag">GB Standard</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 100 pcs)</div><div class="prod-price-val">USD 8 – 45 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Square Pile End Plate -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><rect x="12" y="12" width="40" height="40" rx="3" stroke-width="3" stroke="currentColor" fill="none"/><circle cx="20" cy="20" r="3" fill="currentColor"/><circle cx="44" cy="20" r="3" fill="currentColor"/><circle cx="20" cy="44" r="3" fill="currentColor"/><circle cx="44" cy="44" r="3" fill="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: EP-SQ-200</div>
+          <div class="prod-name">Square / Rectangular Pile End Plate</div>
+          <div class="prod-desc">End plate for hollow square precast concrete piles and rectangular piles. Customized shapes and bolt-hole patterns according to pile design drawings.</div>
+          <table class="specs-table">
+            <tr><td>Section Size</td><td>200×200 – 600×600 mm</td></tr>
+            <tr><td>Material</td><td>Q345B / Q235B</td></tr>
+            <tr><td>Custom</td><td>OEM drawings accepted</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (Customized)</div><div class="prod-price-val">Inquiry</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CAT 3 · PRESTRESSED ANCHORS
+  ═══════════════════════════════════════ -->
+  <section class="cat-section fade-up" data-cat="anchor" id="anchor">
+    <div class="cat-header">
       <div>
         <div class="cat-label">Category 03</div>
-        <div class="cat-title">Rebar Coupling Sleeves</div>
-        <div class="cat-desc">Splice sleeves enabling continuous rebar connections in precast structures. Available in grout-filled, mechanical and threaded types to suit all site conditions.</div>
+        <div class="cat-title">Prestressed Anchor Systems</div>
       </div>
+      <div class="cat-count">5 Products</div>
     </div>
-    <div class="product-cards-grid reveal">
-      <div class="pcard">
-        <span class="pcard-icon">⚙️</span>
-        <div class="pcard-name">Grout Splice Sleeve</div>
-        <div class="pcard-code">PCS-GS</div>
-        <div class="pcard-desc">Cast-in grout-filled sleeve for precast column-base and wall-to-floor connections. Achieves 125% of rebar yield strength after grouting.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Rebar size</span><span class="val">Ø12 – Ø40mm</span></li>
-          <li><span class="key">Standard</span><span class="val">ACI 318 Type 1 / 2</span></li>
-          <li><span class="key">Grout</span><span class="val">Proprietary non-shrink</span></li>
-          <li><span class="key">Test</span><span class="val">Full tensile certs avail.</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 3.50</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">🔧</span>
-        <div class="pcard-name">Mechanical Coupler</div>
-        <div class="pcard-code">PCS-MC</div>
-        <div class="pcard-desc">Parallel threaded coupler (cold-rolled threads) for direct rebar-to-rebar connection. No grout or welding required. Ideal for precast column splices.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Rebar size</span><span class="val">Ø16 – Ø36mm</span></li>
-          <li><span class="key">Thread type</span><span class="val">Parallel rolled</span></li>
-          <li><span class="key">Material</span><span class="val">45# steel / alloy steel</span></li>
-          <li><span class="key">Install time</span><span class="val">~30 seconds/joint</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 2.20</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="pcard-icon">🔩</span>
-        <div class="pcard-name">Half Grout Sleeve</div>
-        <div class="pcard-code">PCS-HG</div>
-        <div class="pcard-desc">One-end threaded, one-end grout-filled sleeve for precast column and shear wall base connections where rebar protrudes from the foundation.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Rebar size</span><span class="val">Ø12 – Ø32mm</span></li>
-          <li><span class="key">Threaded end</span><span class="val">Cold-forged parallel</span></li>
-          <li><span class="key">Standard</span><span class="val">JGJ 107 / ACI 318</span></li>
-          <li><span class="key">Tolerance</span><span class="val">±5mm insertion play</span></li>
-        </ul>
-        <div class="pcard-footer">
-          <div class="pcard-price">From <strong>USD 4.80</strong>/pc</div>
-          <a href="contact.html" class="pcard-cta">Get Quote →</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ── ANCHORS ── -->
-  <div class="product-category" id="anchors">
-    <div class="cat-header reveal">
-      <div class="cat-icon">⚓</div>
+    <div class="product-grid">
+
+      <!-- OVM-style Flat Anchor -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80" alt="Flat Anchor" loading="lazy" />
+          <span class="prod-badge">Featured</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: PSA-FLAT-OVM15</div>
+          <div class="prod-name">Flat Anchorage System (OVM-15 Series)</div>
+          <div class="prod-desc">Wedge-type multi-strand flat anchorage for post-tensioned slabs, beams and bridges. Compatible with 15.2mm / 15.7mm steel strand. Permanent anchoring device transferring prestress force to concrete structure.</div>
+          <table class="specs-table">
+            <tr><td>Strand Dia.</td><td>φ15.2 / φ15.7 mm</td></tr>
+            <tr><td>Capacity</td><td>2 – 55 strands</td></tr>
+            <tr><td>Wedge</td><td>3-piece / 2-piece</td></tr>
+            <tr><td>Standard</td><td>GB/T 14370, ASTM A1061</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Post-tension</span><span class="tag">Bridge</span><span class="tag">Slab</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 50 sets)</div><div class="prod-price-val">USD 35 – 280 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barrel & Wedge -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><rect x="16" y="20" width="32" height="24" rx="4" stroke-width="3" stroke="currentColor" fill="none"/><path d="M24 20v-4M40 20v-4M24 44v4M40 44v4" stroke-width="2" stroke="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: PSA-WEDGE-13</div>
+          <div class="prod-name">Barrel &amp; Wedge Anchorage (Single Strand)</div>
+          <div class="prod-desc">Single-strand barrel and wedge anchor for monostrand tendons in slabs, columns and stay cables. Cold-drawn barrel with precision-machined internal taper for reliable gripping.</div>
+          <table class="specs-table">
+            <tr><td>Strand Dia.</td><td>φ12.7 / φ15.2 mm</td></tr>
+            <tr><td>Breaking Load</td><td>≥ 260 kN</td></tr>
+            <tr><td>Material</td><td>45# Steel (Quenched)</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 500 pcs)</div><div class="prod-price-val">USD 4.50 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ground Anchor -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1520923642038-b4259acecbd7?w=600&q=80" alt="Ground Anchor" loading="lazy" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: PSA-GROUND-GA</div>
+          <div class="prod-name">Soil / Rock Ground Anchor System</div>
+          <div class="prod-desc">Full ground anchor package including bearing plate, trumpet, anchor head and strand. Used for slope stabilization, retaining walls, foundation anti-uplift and tie-back systems.</div>
+          <table class="specs-table">
+            <tr><td>Capacity</td><td>500 – 5,000 kN</td></tr>
+            <tr><td>Strand Count</td><td>3 – 31 strands</td></tr>
+            <tr><td>Application</td><td>Slope / Retaining / Anti-uplift</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (on request)</div><div class="prod-price-val">Inquiry</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coupler / Extension Anchor -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><path d="M8 32h16v-8h16v8h16" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: PSA-COUPLER-EC</div>
+          <div class="prod-name">Strand Coupler / Extension Anchor</div>
+          <div class="prod-desc">For extending tendons where continuous stressing is needed. Allows installation in segments. Maintains 100% strand capacity at coupling point.</div>
+          <table class="specs-table">
+            <tr><td>Compatibility</td><td>φ12.7 – φ15.7 mm</td></tr>
+            <tr><td>Efficiency</td><td>≥ 95% Fu</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 100 pcs)</div><div class="prod-price-val">USD 28 / set</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HDPE Duct -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><path d="M8 22 Q16 10 24 22 Q32 34 40 22 Q48 10 56 22" stroke-width="3" stroke="currentColor" fill="none"/><path d="M8 42 Q16 30 24 42 Q32 54 40 42 Q48 30 56 42" stroke-width="3" stroke="currentColor" fill="none"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: PSA-DUCT-HDPE</div>
+          <div class="prod-name">Corrugated HDPE Tendon Duct</div>
+          <div class="prod-desc">Flat or round corrugated plastic duct for internal bonded post-tensioning. Excellent durability, corrosion resistance and grouting compatibility.</div>
+          <table class="specs-table">
+            <tr><td>Type</td><td>Flat / Round</td></tr>
+            <tr><td>Width</td><td>55 – 130 mm (flat)</td></tr>
+            <tr><td>Material</td><td>HDPE</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 5,000 m)</div><div class="prod-price-val">USD 1.20 / m</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CAT 4 · COUPLING SLEEVES
+  ═══════════════════════════════════════ -->
+  <section class="cat-section fade-up" data-cat="sleeve" id="sleeve">
+    <div class="cat-header">
       <div>
         <div class="cat-label">Category 04</div>
-        <div class="cat-title">Lifting Anchors &amp; Erection Hardware</div>
-        <div class="cat-desc">Cast-in lifting systems for safe handling and erection of precast wall panels, beams, columns, stairs, and hollow-core slabs. All products comply with EN 13155 lifting standards.</div>
+        <div class="cat-title">Rebar Couplers &amp; Coupling Sleeves</div>
       </div>
+      <div class="cat-count">4 Products</div>
     </div>
-    <table class="product-table reveal">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Type</th>
-          <th>WLL</th>
-          <th>Panel Thickness</th>
-          <th>Anchor Body Material</th>
-          <th>Application</th>
-          <th>Standard</th>
-          <th>Price (FOB)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="model">PLA-S08</td>
-          <td>Short foot anchor</td>
-          <td>0.8T</td>
-          <td>100–150mm</td>
-          <td>Ductile cast iron</td>
-          <td>Thin wall panels, façade</td>
-          <td>EN 13155</td>
-          <td class="price-cell">USD 2.10 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PLA-L15</td>
-          <td>Long foot anchor</td>
-          <td>1.5T</td>
-          <td>150–220mm</td>
-          <td>Ductile cast iron</td>
-          <td>Standard wall panels</td>
-          <td>EN 13155</td>
-          <td class="price-cell">USD 3.80 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PLA-W30</td>
-          <td>Wing anchor</td>
-          <td>3.0T</td>
-          <td>200–350mm</td>
-          <td>Forged steel</td>
-          <td>Heavy wall panels, columns</td>
-          <td>EN 13155</td>
-          <td class="price-cell">USD 7.50 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PLA-W60</td>
-          <td>Wing anchor</td>
-          <td>6.0T</td>
-          <td>250–500mm</td>
-          <td>Forged steel</td>
-          <td>Heavy columns, beams</td>
-          <td>EN 13155</td>
-          <td class="price-cell">USD 14.00 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PLA-T100</td>
-          <td>Tunneling anchor</td>
-          <td>10.0T</td>
-          <td>300mm+</td>
-          <td>High-tensile forged</td>
-          <td>Tunnel segments, large slabs</td>
-          <td>EN 13155 / special</td>
-          <td class="price-cell">USD 28.00 /pc</td>
-        </tr>
-        <tr>
-          <td class="model">PLA-HC</td>
-          <td>Hollow core clutch insert</td>
-          <td>1.2T</td>
-          <td>HC slabs 150–400mm</td>
-          <td>Cast iron</td>
-          <td>Hollow-core plank erection</td>
-          <td>EN 13155</td>
-          <td class="price-cell">USD 4.50 /pc</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:0.78rem; color:var(--clr-muted); margin-top:1rem;">
-      ✦ Matching lifting clutches and shackles available. WLL = Working Load Limit. Load test reports issued on request.
-    </p>
-  </div>
 
-  <!-- ── ACCESSORIES ── -->
-  <div class="product-category" id="accessories">
-    <div class="cat-header reveal">
-      <div class="cat-icon">🧰</div>
+    <div class="product-grid">
+
+      <!-- Threaded Rebar Coupler -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Rebar Coupler" loading="lazy" />
+          <span class="prod-badge">GB 50010</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: CS-THREAD-D32</div>
+          <div class="prod-name">Straight Threaded Rebar Coupler</div>
+          <div class="prod-desc">CNC-precision machined parallel-thread coupler for mechanical rebar splicing. Achieves ≥ 110% rebar yield strength. Faster than lap splice, reduces steel consumption by 30%.</div>
+          <table class="specs-table">
+            <tr><td>Bar Diameter</td><td>D16 – D50 mm</td></tr>
+            <tr><td>Grade</td><td>HRB400 / HRB500 / Grade 60</td></tr>
+            <tr><td>Strength</td><td>≥ 110% Fy</td></tr>
+            <tr><td>Tolerance</td><td>±0.03 mm thread pitch</td></tr>
+            <tr><td>Standard</td><td>GB/T 34294, JGJ 107</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">GB 50010</span><span class="tag">JGJ 107</span><span class="tag">Parallel Thread</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 500 pcs)</div><div class="prod-price-val">USD 1.80 – 8.50 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grout Sleeve -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80" alt="Grout Sleeve" loading="lazy" />
+          <span class="prod-badge">Precast</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: CS-GROUT-GT16</div>
+          <div class="prod-name">Grouted Sleeve Coupler (Precast)</div>
+          <div class="prod-desc">Semi-grouted sleeve for connecting precast concrete column and wall panels to foundations. Reliable grouting performance ensures full load transfer. Widely used in precast building structures.</div>
+          <table class="specs-table">
+            <tr><td>Bar Diameter</td><td>D14 – D40 mm</td></tr>
+            <tr><td>Connection Type</td><td>Semi-grouted / Full-grouted</td></tr>
+            <tr><td>Grout Strength</td><td>≥ 85 MPa</td></tr>
+            <tr><td>Standard</td><td>JGJ 355, T/CECS 1029</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Precast</span><span class="tag">Seismic</span><span class="tag">JGJ 355</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 200 pcs)</div><div class="prod-price-val">USD 6.50 – 28 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Taper Thread Coupler -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><path d="M14 24h36v16H14z" stroke-width="3" stroke="currentColor" fill="none"/><path d="M8 32h6M50 32h6" stroke-width="3" stroke="currentColor" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: CS-TAPER-T25</div>
+          <div class="prod-name">Taper Thread Coupler</div>
+          <div class="prod-desc">Self-locking taper thread coupler for rapid bar-to-bar connections. No torque wrench required. Ideal for tight-space applications in columns and shear walls.</div>
+          <table class="specs-table">
+            <tr><td>Bar Diameter</td><td>D16 – D40 mm</td></tr>
+            <tr><td>Taper Angle</td><td>1:16</td></tr>
+            <tr><td>Assembly Time</td><td>&lt; 30 seconds</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 500 pcs)</div><div class="prod-price-val">USD 2.20 – 9.80 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position Coupler -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" stroke-width="3" stroke="currentColor" fill="none"/><path d="M24 32h16M32 24v16" stroke-width="2" stroke="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: CS-POS-R32</div>
+          <div class="prod-name">Position Coupler (Transitional)</div>
+          <div class="prod-desc">For connecting bars of same or different diameters. Extended length allows one-side threading when the other bar cannot rotate. Suitable for column extension in existing structures.</div>
+          <table class="specs-table">
+            <tr><td>Bar Combination</td><td>D20-D28, D25-D32, D32-D40</td></tr>
+            <tr><td>Length</td><td>Standard / Extended</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 200 pcs)</div><div class="prod-price-val">USD 3.50 – 14 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CAT 5 · LIFTING ANCHORS & HARDWARE
+  ═══════════════════════════════════════ -->
+  <section class="cat-section fade-up" data-cat="lifting" id="lifting">
+    <div class="cat-header">
       <div>
         <div class="cat-label">Category 05</div>
-        <div class="cat-title">Accessories &amp; Supplementary Components</div>
-        <div class="cat-desc">Complete the connection with matching nuts, washers, spacers, plastic inserts, foam caps and other ancillary items.</div>
+        <div class="cat-title">Lifting Anchors &amp; Erection Hardware</div>
       </div>
+      <div class="cat-count">4 Products</div>
     </div>
-    <div class="product-cards-grid reveal">
-      <div class="pcard">
-        <span class="pcard-icon">🔘</span>
-        <div class="pcard-name">Heavy Hex Nuts</div>
-        <div class="pcard-code">PCA-NUT</div>
-        <div class="pcard-desc">ISO 4032 / DIN 934 heavy hex nuts in Grade 8, 10 and stainless. Matched to all ProConnect bolt ranges.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Sizes</span><span class="val">M16 · M20 · M24 · M30</span></li>
-          <li><span class="key">Grade</span><span class="val">8 / 10 / SS316</span></li>
-          <li><span class="key">Finish</span><span class="val">Zinc / HDG</span></li>
-        </ul>
-        <div class="pcard-footer"><div class="pcard-price">From <strong>USD 0.08</strong>/pc</div><a href="contact.html" class="pcard-cta">Order →</a></div>
+
+    <div class="product-grid">
+
+      <!-- Flat Lifting Anchor -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1591955506264-3f5a6834570a?w=600&q=80" alt="Flat Lifting Anchor" loading="lazy" />
+          <span class="prod-badge">CE Certified</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: LA-FLAT-5T</div>
+          <div class="prod-name">Flat-Head Lifting Anchor (Cast-in)</div>
+          <div class="prod-desc">Cast-in flat lifting anchor for precast wall panels, double tees and hollow-core slabs. Flat head design allows thin cover. Used with matching lifting clutch / coupler.</div>
+          <table class="specs-table">
+            <tr><td>Capacity</td><td>1.3 / 2.5 / 5.0 / 7.5 / 10 T</td></tr>
+            <tr><td>Material</td><td>S235 / S355 Steel</td></tr>
+            <tr><td>Cover Requirement</td><td>≥ 25 mm</td></tr>
+            <tr><td>Standard</td><td>EN 13369, GB 50666</td></tr>
+          </table>
+          <div class="prod-tags">
+            <span class="tag">Wall Panel</span><span class="tag">CE Marked</span><span class="tag">Cast-in</span>
+          </div>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 200 pcs)</div><div class="prod-price-val">USD 3.80 – 18 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div class="pcard">
-        <span class="pcard-icon">🟫</span>
-        <div class="pcard-name">Hardened Washers</div>
-        <div class="pcard-code">PCA-WSH</div>
-        <div class="pcard-desc">Structural hardened flat washers DIN 125 and EN 14399-6 for precast bolt connections. Also available in extra-large OD for insulation boards.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Sizes</span><span class="val">M16 – M30</span></li>
-          <li><span class="key">Type</span><span class="val">Flat / Oversized / Bevelled</span></li>
-          <li><span class="key">Finish</span><span class="val">Yellow zinc / Plain</span></li>
-        </ul>
-        <div class="pcard-footer"><div class="pcard-price">From <strong>USD 0.05</strong>/pc</div><a href="contact.html" class="pcard-cta">Order →</a></div>
+
+      <!-- Spherical Head Anchor -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="10" stroke-width="3" stroke="currentColor" fill="none"/><path d="M32 30v22" stroke-width="3" stroke="currentColor" stroke-linecap="round"/><path d="M22 52h20" stroke-width="3" stroke="currentColor" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: LA-SPHERE-7.5T</div>
+          <div class="prod-name">Spherical Lifting Anchor (Heavy Precast)</div>
+          <div class="prod-desc">Round-head spherical cast-in anchor for heavy precast beams, columns and retaining wall units. 360° rotation compatible with lifting clutches. High-strength forged steel.</div>
+          <table class="specs-table">
+            <tr><td>Capacity</td><td>2.5 / 5.0 / 7.5 / 15 / 22 T</td></tr>
+            <tr><td>Material</td><td>42CrMo4 Forged Steel</td></tr>
+            <tr><td>Surface</td><td>Hot-dip galvanized</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 100 pcs)</div><div class="prod-price-val">USD 8.50 – 45 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div class="pcard">
-        <span class="pcard-icon">🟦</span>
-        <div class="pcard-name">Plastic Pocket Formers</div>
-        <div class="pcard-code">PCA-PF</div>
-        <div class="pcard-desc">Injection-moulded plastic sleeves inserted into precast molds to create accurate bolt-hole pockets. Tapered for easy removal after stripping.</div>
-        <ul class="pcard-specs">
-          <li><span class="key">Sizes</span><span class="val">Ø20 – Ø50mm</span></li>
-          <li><span class="key">Material</span><span class="val">Virgin PP / HDPE</span></li>
-          <li><span class="key">Length</span><span class="val">50–200mm</span></li>
-        </ul>
-        <div class="pcard-footer"><div class="pcard-price">From <strong>USD 0.12</strong>/pc</div><a href="contact.html" class="pcard-cta">Order →</a></div>
+
+      <!-- Lifting Clutch -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><path d="M24 12h16v12l8 8v12H16V32l8-8z" stroke-width="3" stroke="currentColor" fill="none" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="prod-badge">Tool</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: LA-CLUTCH-10T</div>
+          <div class="prod-name">Lifting Clutch / Coupler (Reusable)</div>
+          <div class="prod-desc">Reusable lifting clutch that engages with cast-in flat or spherical anchors. Self-locking mechanism. Complete 360° rotation. Reduces lifting hardware cost over project lifecycle.</div>
+          <table class="specs-table">
+            <tr><td>Working Load</td><td>1.3 – 22 T</td></tr>
+            <tr><td>Angle</td><td>0° – 45° with reduction</td></tr>
+            <tr><td>Safety Factor</td><td>4:1</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 10 pcs)</div><div class="prod-price-val">USD 45 – 320 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
       </div>
+
+      <!-- Coil Rod Insert -->
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-placeholder">
+            <svg viewBox="0 0 64 64"><path d="M20 12 Q32 8 44 12 Q56 16 44 20 Q32 24 20 20 Q8 16 20 12Z" stroke-width="2" stroke="currentColor" fill="none"/><path d="M20 20v24M44 20v24" stroke-width="2" stroke="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-model">SKU: LA-COIL-M16</div>
+          <div class="prod-name">Coil Rod Insert (Erection Anchor)</div>
+          <div class="prod-desc">Cast-in coil insert for temporary erection and alignment of precast elements. Compatible with standard Dywidag / PDA coil rod systems. After erection, rod removed and hole grouted.</div>
+          <table class="specs-table">
+            <tr><td>Thread</td><td>M10, M12, M16, M20, M24</td></tr>
+            <tr><td>Pull-out Strength</td><td>25 – 150 kN</td></tr>
+            <tr><td>Material</td><td>Hot-rolled coil wire</td></tr>
+          </table>
+          <div class="prod-footer">
+            <div class="prod-price"><div class="prod-price-label">FOB Price (MOQ 1,000 pcs)</div><div class="prod-price-val">USD 0.35 – 2.80 / pc</div></div>
+            <a href="contact.html" class="btn-rfq">RFQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div style="background: linear-gradient(135deg, rgba(232,160,32,0.08) 0%, rgba(232,160,32,0.03) 100%); border: 1px solid rgba(232,160,32,0.25); padding: 3rem 2rem; text-align:center; margin-top: 1rem;">
+    <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight:700; color:var(--clr-white); text-transform:uppercase; margin-bottom:0.75rem;">Can't Find Your Specification?</div>
+    <p style="color:var(--clr-muted); margin-bottom: 1.75rem; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.7;">We manufacture to OEM drawings and custom specifications. Send us your technical drawing or datasheet — our engineers will respond within 24 hours.</p>
+    <a href="contact.html" style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--clr-accent); color:#000; font-weight:700; font-size:0.9rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.85rem 2rem; text-decoration:none; font-family:var(--font-body);">Submit Custom RFQ →</a>
   </div>
 
-</div><!-- /content -->
+</main>
 
-<div class="cta-strip">
-  <h2>Need a Custom Specification?</h2>
-  <p>Send your drawings, project specifications or BOQ. We respond within 24 business hours with a detailed quotation.</p>
-  <a href="contact.html" class="btn-dark">Submit RFQ Now</a>
-</div>
-
-<footer class="footer">
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-copy">© 2025 ProConnect Fasteners. All rights reserved.</div>
-    <nav class="footer-nav">
+    <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
-    </nav>
+    </div>
+    <div class="footer-copy">© 2025 ProConnect Fasteners Co., Ltd. — All Rights Reserved</div>
   </div>
 </footer>
 
 <script>
-  // Smooth filter tab highlight
-  const tabs = document.querySelectorAll('.filter-tab');
-  const sections = ['bolts','endplates','sleeves','anchors','accessories'];
-  window.addEventListener('scroll', () => {
-    let current = 'bolts';
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 160) current = id;
+  // Filter
+  function filterCat(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.cat-section').forEach(sec => {
+      if (cat === 'all' || sec.dataset.cat === cat) {
+        sec.style.display = '';
+      } else {
+        sec.style.display = 'none';
+      }
     });
-    tabs.forEach(t => { t.classList.toggle('active', t.getAttribute('href') === '#'+current); });
-  });
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
-  reveals.forEach(el => io.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
