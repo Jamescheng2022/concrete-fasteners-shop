@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & RFQ | ProConnect Fasteners</title>
+  <meta name="description" content="Request a quote for precast concrete fasteners, end plates, coupling sleeves and lifting anchors. Response within 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-bg: #0a0c10; --clr-surface: #111318; --clr-surface2: #181c22;
+      --clr-border: #232830; --clr-accent: #e8a020; --clr-accent2: #f0b840;
+      --clr-text: #e8eaf0; --clr-muted: #8a90a0; --clr-white: #ffffff;
+      --font-body: 'Inter', sans-serif; --font-heading: 'Barlow Condensed', sans-serif;
+      --max-w: 1280px; --radius: 4px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--clr-bg); color: var(--clr-text); font-family: var(--font-body); }
+
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(10,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--clr-border); }
+    .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 38px; height: 38px; background: var(--clr-accent); display: flex; align-items: center; justify-content: center; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+    .logo-mark svg { width: 20px; height: 20px; fill: #000; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.04em; }
+    .logo-sub { font-size: 0.6rem; color: var(--clr-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { color: var(--clr-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--clr-text); }
+    .nav-cta { background: var(--clr-accent); color: #000; padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background .2s; }
+    .nav-cta:hover { background: var(--clr-accent2); }
+
+    /* Page header */
+    .page-header { background: var(--clr-surface); border-bottom: 1px solid var(--clr-border); padding: 4rem 2rem 3rem; }
+    .page-header-inner { max-width: var(--max-w); margin: 0 auto; }
+    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 0.75rem; }
+    .page-label::before { content:''; display:block; width:20px; height:2px; background:var(--clr-accent); }
+    .page-title { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--clr-white); }
+    .page-sub { font-size: 1rem; color: var(--clr-muted); max-width: 600px; margin-top: 0.75rem; line-height: 1.7; }
+
+    /* Content */
+    .content { max-width: var(--max-w); margin: 0 auto; padding: 4rem 2rem 6rem; display: grid; grid-template-columns: 5fr 3fr; gap: 4rem; }
+
+    /* Form */
+    .form-section h2 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.4rem; }
+    .form-section p { font-size: 0.85rem; color: var(--clr-muted); margin-bottom: 2rem; line-height: 1.7; }
+    .form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clr-muted); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--clr-surface); border: 1px solid var(--clr-border);
+      border-radius: var(--radius); padding: 0.75rem 1rem;
+      color: var(--clr-text); font-family: var(--font-body); font-size: 0.88rem;
+      transition: border-color .2s;
+      outline: none; width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--clr-accent); }
+    .form-group select option { background: var(--clr-surface2); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--clr-border); }
+    .form-submit {
+      background: var(--clr-accent); color: #000;
+      border: none; border-radius: var(--radius);
+      padding: 0.95rem 2.5rem; font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background .2s, transform .15s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--clr-accent2); transform: translateY(-1px); }
+    .form-note { font-size: 0.75rem; color: var(--clr-muted); margin-top: 0.5rem; line-height: 1.6; }
+
+    /* Sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 6px; padding: 1.75rem; }
+    .info-card-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 1.25rem; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-list li { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-list-icon { width: 32px; height: 32px; background: rgba(232,160,32,0.1); border: 1px solid rgba(232,160,32,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+    .contact-list-info { display: flex; flex-direction: column; gap: 2px; }
+    .contact-list-label { font-size: 0.68rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .contact-list-value { font-size: 0.85rem; color: var(--clr-text); }
+    .contact-list-value a { color: var(--clr-text); text-decoration: none; transition: color .2s; }
+    .contact-list-value a:hover { color: var(--clr-accent); }
+
+    /* Hours */
+    .hours-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--clr-border); font-size: 0.82rem; }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--clr-muted); }
+    .hours-time { color: var(--clr-text); font-weight: 500; }
+
+    /* Promise */
+    .promise-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .promise-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; color: var(--clr-muted); line-height: 1.6; }
+    .promise-list li::before { content: '✓'; color: var(--clr-accent); font-weight: 900; flex-shrink: 0; width: 18px; height: 18px; background: rgba(232,160,32,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; margin-top: 1px; }
+
+    /* FAQ */
+    .faq-section { border-top: 1px solid var(--clr-border); padding: 5rem 2rem; }
+    .faq-inner { max-width: var(--max-w); margin: 0 auto; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+    .faq-item { padding-bottom: 1.5rem; border-bottom: 1px solid var(--clr-border); }
+    .faq-q { font-size: 0.95rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.6rem; line-height: 1.4; }
+    .faq-a { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.7; }
+
+    .footer { background: var(--clr-bg); padding: 3rem 2rem 2rem; border-top: 1px solid var(--clr-border); }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.78rem; color: var(--clr-muted); }
+    .footer-nav { display: flex; gap: 1.5rem; }
+    .footer-nav a { font-size: 0.78rem; color: var(--clr-muted); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: var(--clr-text); }
+
+    @media (max-width: 1024px) { .content { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .form-row { grid-template-columns: 1fr; } .faq-grid { grid-template-columns: 1fr; } }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></div>
+      <div class="logo-text"><span class="logo-name">PROCONNECT</span><span class="logo-sub">Fasteners &amp; Connectors</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a href="#rfq" class="nav-cta">Request Quote</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-label reveal">Get in Touch</div>
+    <h1 class="page-title reveal">Request a Quote</h1>
+    <p class="page-sub reveal">Complete the form below with your product requirements. Our sales team will respond with a detailed quotation within 24 business hours.</p>
+  </div>
+</div>
+
+<div class="content" id="rfq">
+  <!-- Form -->
+  <div class="form-section reveal">
+    <h2>Quotation Request (RFQ)</h2>
+    <p>Provide as much detail as possible about your requirements — product type, dimensions, quantity, and destination — to receive the most accurate quotation.</p>
+    <form class="form" action="mailto:sales@proconnect-fasteners.com" method="GET">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" name="first_name" placeholder="John" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name *</label>
+          <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Business Email *</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Company Name *</label>
+          <input type="text" id="company" name="company" placeholder="Your Company Ltd." required />
+        </div>
+        <div class="form-group">
+          <label for="country">Country / Region *</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select country</option>
+            <option>Germany</option><option>Australia</option><option>Singapore</option>
+            <option>United Kingdom</option><option>United States</option><option>Canada</option>
+            <option>UAE</option><option>Saudi Arabia</option><option>Netherlands</option>
+            <option>Sweden</option><option>South Africa</option><option>Malaysia</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product">Product Category *</label>
+        <select id="product" name="product_category" required>
+          <option value="" disabled selected>Select product type</option>
+          <option>High-Strength Structural Bolts</option>
+          <option>Anchor End Plates</option>
+          <option>Rebar Coupling Sleeves</option>
+          <option>Lifting Anchors &amp; Erection Hardware</option>
+          <option>Accessories (Nuts, Washers, Pocket Formers)</option>
+          <option>Multiple / Custom Requirement</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="qty">Estimated Quantity</label>
+          <input type="text" id="qty" name="quantity" placeholder="e.g. 5,000 pcs / 2 MT" />
+        </div>
+        <div class="form-group">
+          <label for="timeline">Required Delivery</label>
+          <input type="text" id="timeline" name="timeline" placeholder="e.g. Within 6 weeks" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="specs">Specifications / Requirements *</label>
+        <textarea id="specs" name="specifications" rows="5" placeholder="Please describe: product dimensions (diameter, length, grade, coating), any applicable standards (EN, ASTM, etc.), port of delivery, and any special requirements..." required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="message">Additional Notes</label>
+        <textarea id="message" name="message" rows="3" placeholder="Project description, drawings to follow, delivery terms preference, etc."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit RFQ →</button>
+      <p class="form-note">✦ We respond to all inquiries within 24 business hours. Your information is kept strictly confidential and never shared with third parties.</p>
+    </form>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar reveal">
+    <div class="info-card">
+      <div class="info-card-title">Contact Information</div>
+      <ul class="contact-list">
+        <li>
+          <div class="contact-list-icon">✉</div>
+          <div class="contact-list-info">
+            <span class="contact-list-label">Email</span>
+            <span class="contact-list-value"><a href="mailto:sales@proconnect-fasteners.com">sales@proconnect-fasteners.com</a></span>
+          </div>
+        </li>
+        <li>
+          <div class="contact-list-icon">📞</div>
+          <div class="contact-list-info">
+            <span class="contact-list-label">Phone / WhatsApp</span>
+            <span class="contact-list-value"><a href="tel:+8613800000000">+86 138 0000 0000</a></span>
+          </div>
+        </li>
+        <li>
+          <div class="contact-list-icon">💬</div>
+          <div class="contact-list-info">
+            <span class="contact-list-label">WeChat</span>
+            <span class="contact-list-value">ProConnect_Sales</span>
+          </div>
+        </li>
+        <li>
+          <div class="contact-list-icon">📍</div>
+          <div class="contact-list-info">
+            <span class="contact-list-label">Factory Address</span>
+            <span class="contact-list-value">No. 88 Industrial Avenue, Shandong Province, China 256600</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Business Hours</div>
+      <div class="hours-row"><span class="hours-day">Mon – Fri</span><span class="hours-time">08:00 – 18:00 CST</span></div>
+      <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">09:00 – 13:00 CST</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">WhatsApp / Email only</span></div>
+      <p style="font-size:.75rem; color:var(--clr-muted); margin-top:1rem; line-height:1.6;">We typically respond to RFQs within 4–8 hours during business hours.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Our Commitments</div>
+      <ul class="promise-list">
+        <li>24-hour quotation response</li>
+        <li>Full material certifications with every order</li>
+        <li>Free samples for qualified projects</li>
+        <li>Third-party inspection accepted</li>
+        <li>Competitive FOB / CIF pricing</li>
+        <li>Dedicated account manager</li>
+        <li>Professional export documentation</li>
+      </ul>
+    </div>
+    <div class="info-card" style="border-color:rgba(232,160,32,0.3); background: rgba(232,160,32,0.04);">
+      <div class="info-card-title">Need Samples?</div>
+      <p style="font-size:.83rem; color:var(--clr-muted); line-height:1.65; margin-bottom:1.25rem;">We offer free product samples for qualified projects and distributors. Simply mention "Sample Request" in your inquiry.</p>
+      <a href="mailto:samples@proconnect-fasteners.com" style="font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--clr-accent); text-decoration:none;">Request Samples →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="reveal">
+      <div class="page-label">FAQ</div>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--clr-white);">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q">What is your minimum order quantity (MOQ)?</div>
+        <div class="faq-a">For standard bolt and sleeve sizes, MOQ is 500 pcs. For anchor plates and custom fabricated items, MOQ is typically 50–100 pcs depending on complexity. Sample orders of 10–20 pcs are available for qualified buyers.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How long is the lead time for standard products?</div>
+        <div class="faq-a">Standard sizes are held in stock and can be dispatched within 3–5 business days. Custom dimensions or non-standard finishes typically require 10–15 business days from order confirmation.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can you provide mill certificates and test reports?</div>
+        <div class="faq-a">Yes. Every shipment includes mill certificates for raw materials, dimensional inspection reports, and mechanical test results (tensile strength, hardness). Third-party inspection by SGS, BV or similar is welcome.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What surface treatment / coating options are available?</div>
+        <div class="faq-a">We offer: hot-dip galvanizing (HDG) to EN ISO 1461, electro-zinc plating, phosphate + oil, epoxy primer, and stainless steel (Grade 316). Custom coating specs for marine or aggressive environments available on request.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What shipping terms do you offer?</div>
+        <div class="faq-a">We quote FOB Qingdao/Shanghai/Tianjin as standard. CIF, DAP and DDU terms can be arranged. We work with established freight forwarders for FCL and LCL shipments worldwide.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can you manufacture to our drawings or proprietary specifications?</div>
+        <div class="faq-a">Absolutely. Custom fabrication from DXF, DWG, PDF or STEP drawings is a core part of our business. OEM / private-label supply is also available for distributors with qualifying order volumes.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Are your lifting anchors certified to EN 13155?</div>
+        <div class="faq-a">Yes. Our lifting anchor range carries CE marking and is certified to EN 13155 (non-fixed load lifting attachments for concrete). Load test reports and FEM calculations are available for project documentation.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you accept payment by Letter of Credit (LC)?</div>
+        <div class="faq-a">Yes. We accept T/T (bank transfer), LC at sight, and Western Union for smaller orders. Payment terms vary by order size and trading history. Please discuss with our sales team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 ProConnect Fasteners. All rights reserved.</div>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.06 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
