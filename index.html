@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProConnect Fasteners | Precast Concrete Connection Systems</title>
+  <meta name="description" content="Specialist manufacturer of high-performance connection systems for precast concrete — bolts, end plates, sleeves, lifting anchors and accessories. Global B2B supply." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clr-bg: #0a0c10;
+      --clr-surface: #111318;
+      --clr-surface2: #181c22;
+      --clr-border: #232830;
+      --clr-accent: #e8a020;
+      --clr-accent2: #f0b840;
+      --clr-text: #e8eaf0;
+      --clr-muted: #8a90a0;
+      --clr-white: #ffffff;
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --max-w: 1280px;
+      --radius: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--clr-bg); color: var(--clr-text); font-family: var(--font-body); line-height: 1.6; }
+
+    /* ─── NAV ──────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,12,16,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 38px; height: 38px; background: var(--clr-accent);
+      display: flex; align-items: center; justify-content: center;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .logo-mark svg { width: 20px; height: 20px; fill: #000; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.04em; }
+    .logo-sub { font-size: 0.6rem; color: var(--clr-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { color: var(--clr-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--clr-text); }
+    .nav-cta {
+      background: var(--clr-accent); color: #000;
+      padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      border-radius: var(--radius); transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--clr-accent2); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--clr-text); border-radius: 2px; }
+
+    /* ─── HERO ─────────────────────────────── */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 92vh; display: flex; align-items: center;
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(10,12,16,0.97) 40%, rgba(10,12,16,0.5) 100%),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-grid-overlay {
+      position: absolute; inset: 0; opacity: 0.035;
+      background-image: linear-gradient(var(--clr-accent) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--clr-accent) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: var(--max-w); margin: 0 auto; padding: 5rem 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--clr-accent); margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before { content:''; display:block; width:28px; height:2px; background:var(--clr-accent); }
+    .hero h1 {
+      font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700; line-height: 1.05; letter-spacing: 0.01em;
+      color: var(--clr-white); margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--clr-accent); }
+    .hero-desc { font-size: 1.05rem; color: var(--clr-muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--clr-accent); color: #000;
+      padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      border-radius: var(--radius); transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--clr-accent2); transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1px solid var(--clr-border); color: var(--clr-text);
+      padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      border-radius: var(--radius); transition: border-color .2s, color .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-ghost:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .hero-stat { border-left: 2px solid var(--clr-accent); padding-left: 1rem; }
+    .hero-stat-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--clr-white); line-height: 1; }
+    .hero-stat-label { font-size: 0.72rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+    /* hero right panel */
+    .hero-panel {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 8px; padding: 2rem;
+    }
+    .hero-panel-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-muted); margin-bottom: 1.25rem; }
+    .product-thumb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .product-thumb {
+      background: var(--clr-surface2); border: 1px solid var(--clr-border);
+      border-radius: 6px; padding: 1.25rem; cursor: pointer; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .product-thumb:hover { border-color: var(--clr-accent); background: rgba(232,160,32,0.04); }
+    .product-thumb-icon { font-size: 1.8rem; margin-bottom: 0.6rem; display: block; }
+    .product-thumb-name { font-size: 0.82rem; font-weight: 600; color: var(--clr-text); }
+    .product-thumb-spec { font-size: 0.7rem; color: var(--clr-muted); margin-top: 2px; }
+    .certifications {
+      display: flex; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--clr-border); flex-wrap: wrap;
+    }
+    .cert-badge {
+      border: 1px solid var(--clr-border); border-radius: var(--radius);
+      padding: 0.35rem 0.7rem; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--clr-muted); text-transform: uppercase;
+    }
+
+    /* ─── SECTION WRAPPER ─────────────────── */
+    .section { padding: 6rem 2rem; }
+    .section-inner { max-width: var(--max-w); margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--clr-accent); margin-bottom: 1rem;
+    }
+    .section-label::before { content:''; display:block; width:20px; height:2px; background:var(--clr-accent); }
+    .section-title { font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--clr-white); line-height: 1.1; }
+    .section-sub { font-size: 1rem; color: var(--clr-muted); margin-top: 0.75rem; max-width: 540px; line-height: 1.75; }
+
+    /* ─── DIVIDER ─────────────────────────── */
+    .divider { height: 1px; background: var(--clr-border); }
+
+    /* ─── PRODUCTS PREVIEW ─────────────────── */
+    .products-section { background: var(--clr-surface); }
+    .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--clr-border); }
+    .product-card {
+      background: var(--clr-surface); padding: 2rem; text-decoration: none;
+      transition: background .25s;
+      position: relative; overflow: hidden;
+    }
+    .product-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--clr-accent); transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .product-card:hover { background: var(--clr-surface2); }
+    .product-card:hover::after { transform: scaleX(1); }
+    .product-card-tag {
+      display: inline-block; background: rgba(232,160,32,0.12); color: var(--clr-accent);
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 1.25rem;
+    }
+    .product-card-img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 4px; margin-bottom: 1.25rem;
+      background: var(--clr-surface2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+    }
+    .product-card-name { font-size: 1.05rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.5rem; }
+    .product-card-desc { font-size: 0.82rem; color: var(--clr-muted); line-height: 1.65; }
+    .product-card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--clr-accent); margin-top: 1.25rem; transition: gap .2s;
+    }
+    .product-card:hover .product-card-link { gap: 10px; }
+    .product-card-link::after { content: '→'; }
+    .product-specs { list-style: none; margin-top: 0.85rem; }
+    .product-specs li {
+      font-size: 0.75rem; color: var(--clr-muted);
+      padding: 0.3rem 0; border-bottom: 1px solid var(--clr-border);
+      display: flex; gap: 0.5rem;
+    }
+    .product-specs li::before { content: '—'; color: var(--clr-accent); flex-shrink: 0; }
+
+    /* ─── PROCESS / WHY US ─────────────────── */
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--clr-border); margin-top: 3rem; }
+    .process-step { background: var(--clr-bg); padding: 2.5rem 2rem; }
+    .process-num {
+      font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700;
+      color: var(--clr-border); line-height: 1; margin-bottom: 1rem; user-select: none;
+    }
+    .process-title { font-size: 1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.6rem; }
+    .process-desc { font-size: 0.83rem; color: var(--clr-muted); line-height: 1.65; }
+
+    /* ─── CAPABILITY BAND ─────────────────── */
+    .capability-band {
+      background: var(--clr-accent); padding: 4rem 2rem;
+    }
+    .capability-band-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .capability-band h2 { font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: #000; line-height: 1.1; }
+    .capability-band p { color: rgba(0,0,0,0.65); font-size: 0.95rem; margin-top: 0.75rem; line-height: 1.7; }
+    .capability-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .capability-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; font-weight: 600; color: #000;
+    }
+    .capability-list li::before {
+      content: '✓'; flex-shrink: 0; width: 20px; height: 20px;
+      background: rgba(0,0,0,0.12); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 900; margin-top: 1px;
+    }
+
+    /* ─── MARKETS ─────────────────────────── */
+    .markets-section { background: var(--clr-bg); }
+    .markets-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 1px; background: var(--clr-border); margin-top: 3rem; }
+    .market-item {
+      background: var(--clr-surface); padding: 1.75rem 1.25rem;
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem;
+      transition: background .2s;
+    }
+    .market-item:hover { background: var(--clr-surface2); }
+    .market-flag { font-size: 1.8rem; }
+    .market-name { font-size: 0.78rem; font-weight: 600; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ─── TESTIMONIALS ─────────────────────── */
+    .testimonials-section { background: var(--clr-surface); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .testimonial-card { background: var(--clr-bg); border: 1px solid var(--clr-border); border-radius: 6px; padding: 2rem; }
+    .testimonial-quote { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+    .testimonial-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--clr-accent); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; color: #000; flex-shrink: 0;
+    }
+    .testimonial-name { font-size: 0.85rem; font-weight: 700; color: var(--clr-white); }
+    .testimonial-role { font-size: 0.73rem; color: var(--clr-muted); margin-top: 1px; }
+    .stars { color: var(--clr-accent); font-size: 0.75rem; margin-bottom: 0.85rem; letter-spacing: 2px; }
+
+    /* ─── CTA BAND ─────────────────────────── */
+    .cta-band {
+      background: var(--clr-surface2); border-top: 1px solid var(--clr-border);
+      border-bottom: 1px solid var(--clr-border); padding: 5rem 2rem;
+      text-align: center;
+    }
+    .cta-band h2 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--clr-white); }
+    .cta-band p { font-size: 1rem; color: var(--clr-muted); max-width: 480px; margin: 1rem auto 2.5rem; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─────────────────────────── */
+    .footer { background: var(--clr-bg); padding: 4rem 2rem 2rem; border-top: 1px solid var(--clr-border); }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--clr-border); }
+    .footer-brand p { font-size: 0.85rem; color: var(--clr-muted); margin-top: 1rem; line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul a { color: var(--clr-muted); text-decoration: none; font-size: 0.85rem; transition: color .2s; }
+    .footer-col ul a:hover { color: var(--clr-text); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--clr-muted); }
+    .footer-badges { display: flex; gap: 0.75rem; }
+    .footer-badge {
+      border: 1px solid var(--clr-border); padding: 0.25rem 0.6rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: var(--clr-muted); text-transform: uppercase;
+      border-radius: 2px;
+    }
+    .contact-info { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .contact-info a { color: var(--clr-muted); text-decoration: none; font-size: 0.83rem; transition: color .2s; }
+    .contact-info a:hover { color: var(--clr-accent); }
+
+    /* ─── RESPONSIVE ──────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-bg-img { background: linear-gradient(to bottom, rgba(10,12,16,0.97) 60%, rgba(10,12,16,0.85) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80') center/cover no-repeat; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .markets-grid { grid-template-columns: repeat(3,1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .capability-band-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-stats { grid-template-columns: repeat(3,1fr); }
+      .products-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .markets-grid { grid-template-columns: repeat(3,1fr); }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">PROCONNECT</span>
+        <span class="logo-sub">Fasteners &amp; Connectors</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Request Quote</a>
+    <div class="nav-hamburger" onclick="this.closest('nav').querySelector('.nav-links').style.display='flex';this.closest('nav').querySelector('.nav-links').style.flexDirection='column';this.closest('nav').querySelector('.nav-links').style.position='absolute';this.closest('nav').querySelector('.nav-links').style.top='72px';this.closest('nav').querySelector('.nav-links').style.left='0';this.closest('nav').querySelector('.nav-links').style.right='0';this.closest('nav').querySelector('.nav-links').style.background='#111318';this.closest('nav').querySelector('.nav-links').style.padding='2rem';this.closest('nav').querySelector('.nav-links').style.borderTop='1px solid #232830';">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow reveal">Precast Concrete Connection Systems</div>
+      <h1 class="reveal">Engineered for <em>Structural Precision</em></h1>
+      <p class="hero-desc reveal">
+        Manufacturing and supplying high-performance bolts, end plates, coupling sleeves,
+        lifting anchors and accessories for precast concrete — trusted by contractors
+        and engineers across 80+ countries.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="products.html" class="btn-primary">Browse Products</a>
+        <a href="contact.html" class="btn-ghost">Request a Quote</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Years Manufacturing</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">80+</div>
+          <div class="hero-stat-label">Export Countries</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Global Clients</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-panel reveal">
+      <div class="hero-panel-title">Product Categories</div>
+      <div class="product-thumb-grid">
+        <a href="products.html#bolts" class="product-thumb">
+          <span class="product-thumb-icon">🔩</span>
+          <div class="product-thumb-name">Structural Bolts</div>
+          <div class="product-thumb-spec">Grade 8.8 / 10.9 · M16–M30</div>
+        </a>
+        <a href="products.html#endplates" class="product-thumb">
+          <span class="product-thumb-icon">🔲</span>
+          <div class="product-thumb-name">End Plates</div>
+          <div class="product-thumb-spec">Galvanized · 100mm–300mm</div>
+        </a>
+        <a href="products.html#sleeves" class="product-thumb">
+          <span class="product-thumb-icon">⚙️</span>
+          <div class="product-thumb-name">Coupling Sleeves</div>
+          <div class="product-thumb-spec">Grout / Lap / Mechanical</div>
+        </a>
+        <a href="products.html#anchors" class="product-thumb">
+          <span class="product-thumb-icon">⚓</span>
+          <div class="product-thumb-name">Lifting Anchors</div>
+          <div class="product-thumb-spec">0.8T – 20T capacity</div>
+        </a>
+      </div>
+      <div class="certifications">
+        <span class="cert-badge">ISO 9001</span>
+        <span class="cert-badge">CE Mark</span>
+        <span class="cert-badge">ASTM A307</span>
+        <span class="cert-badge">EN 14399</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ PRODUCTS ══════════════════════════════ -->
+<section class="section products-section">
+  <div class="section-inner">
+    <div class="products-header reveal">
+      <div>
+        <div class="section-label">What We Make</div>
+        <h2 class="section-title">Connection System Product Range</h2>
+        <p class="section-sub">Complete portfolio of engineered connection hardware for precast concrete structures.</p>
+      </div>
+      <a href="products.html" class="btn-ghost">Full Catalog →</a>
+    </div>
+    <div class="products-grid">
+      <a href="products.html#bolts" class="product-card reveal">
+        <div class="product-card-tag">Fasteners</div>
+        <div class="product-card-img">🔩</div>
+        <div class="product-card-name">High-Strength Bolts</div>
+        <div class="product-card-desc">Fully threaded and hex-head bolts in Grade 8.8 and 10.9 for structural precast connections. Hot-dip galvanized or zinc-plated finish.</div>
+        <ul class="product-specs">
+          <li>M16 · M20 · M24 · M30 diameters</li>
+          <li>Grade 8.8 / 10.9 / Stainless 316</li>
+          <li>Custom length to order</li>
+        </ul>
+        <span class="product-card-link">View Specs</span>
+      </a>
+      <a href="products.html#endplates" class="product-card reveal">
+        <div class="product-card-tag">Connection Hardware</div>
+        <div class="product-card-img">🔲</div>
+        <div class="product-card-name">Anchor End Plates</div>
+        <div class="product-card-desc">Precision-cut and welded anchor plates for load transfer at precast panel joints. Custom hole patterns available.</div>
+        <ul class="product-specs">
+          <li>100×100 to 300×300mm</li>
+          <li>Thickness: 8–20mm</li>
+          <li>HDG / Epoxy coating options</li>
+        </ul>
+        <span class="product-card-link">View Specs</span>
+      </a>
+      <a href="products.html#sleeves" class="product-card reveal">
+        <div class="product-card-tag">Rebar Connection</div>
+        <div class="product-card-img">⚙️</div>
+        <div class="product-card-name">Coupling Sleeves</div>
+        <div class="product-card-desc">Grout-filled, lap, and mechanical splice sleeves providing reliable rebar-to-rebar continuity in precast joints.</div>
+        <ul class="product-specs">
+          <li>Ø12 – Ø40mm rebar sizes</li>
+          <li>Grout sleeve / mechanical type</li>
+          <li>Cast-in or drilled-in install</li>
+        </ul>
+        <span class="product-card-link">View Specs</span>
+      </a>
+      <a href="products.html#anchors" class="product-card reveal">
+        <div class="product-card-tag">Lifting Systems</div>
+        <div class="product-card-img">⚓</div>
+        <div class="product-card-name">Lifting Anchors &amp; Inserts</div>
+        <div class="product-card-desc">Cast-in lifting anchors, wing-type and foot anchors for safe erection of precast wall panels, slabs, and beams.</div>
+        <ul class="product-specs">
+          <li>Capacity: 0.8T – 20T</li>
+          <li>Short/Long/Swivel anchor types</li>
+          <li>Matching lifting clutches</li>
+        </ul>
+        <span class="product-card-link">View Specs</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ WHY US ════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Built for Demanding Projects</h2>
+      <p class="section-sub">We combine 15 years of manufacturing expertise with rigorous quality control to supply the global precast industry.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <div class="process-title">Precision Manufacturing</div>
+        <div class="process-desc">CNC machining and automated welding lines ensure ±0.1mm dimensional tolerances. Every batch undergoes tensile and hardness testing before dispatch.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <div class="process-title">Material Traceability</div>
+        <div class="process-desc">Full mill certificate traceability on all raw materials. We source from certified steel mills meeting EN 10025 and ASTM standards.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <div class="process-title">Global Logistics</div>
+        <div class="process-desc">In-stock inventory for standard sizes with 3–5 day lead time. Full FCL/LCL export packaging to any port worldwide with professional documentation.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <div class="process-title">Technical Support</div>
+        <div class="process-desc">Dedicated application engineers available for project-specific selection guidance, custom design support, and on-site problem solving.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAPABILITY BAND ════════════════════════ -->
+<div class="capability-band">
+  <div class="capability-band-inner">
+    <div class="reveal">
+      <h2>Custom Engineering & OEM Manufacturing</h2>
+      <p>Need non-standard dimensions, special coatings, or proprietary branded components? Our engineering team works directly with your specifications to deliver tailor-made connection systems for any precast application.</p>
+    </div>
+    <ul class="capability-list reveal">
+      <li>Custom dimensions & tolerances</li>
+      <li>Special surface treatments</li>
+      <li>OEM / private label supply</li>
+      <li>Material certification packages</li>
+      <li>Sample prototyping in 7 days</li>
+      <li>Full load test reports</li>
+      <li>3rd party inspection accepted</li>
+      <li>Project-based pricing</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ MARKETS ═══════════════════════════════ -->
+<section class="section markets-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Global Reach</div>
+      <h2 class="section-title">Trusted Across 80+ Countries</h2>
+      <p class="section-sub">Our products are specified in major precast construction projects from Western Europe to Southeast Asia.</p>
+    </div>
+    <div class="markets-grid reveal">
+      <div class="market-item"><span class="market-flag">🇩🇪</span><span class="market-name">Germany</span></div>
+      <div class="market-item"><span class="market-flag">🇦🇺</span><span class="market-name">Australia</span></div>
+      <div class="market-item"><span class="market-flag">🇸🇬</span><span class="market-name">Singapore</span></div>
+      <div class="market-item"><span class="market-flag">🇸🇦</span><span class="market-name">Saudi Arabia</span></div>
+      <div class="market-item"><span class="market-flag">🇺🇸</span><span class="market-name">USA</span></div>
+      <div class="market-item"><span class="market-flag">🇬🇧</span><span class="market-name">UK</span></div>
+      <div class="market-item"><span class="market-flag">🇸🇪</span><span class="market-name">Sweden</span></div>
+      <div class="market-item"><span class="market-flag">🇦🇪</span><span class="market-name">UAE</span></div>
+      <div class="market-item"><span class="market-flag">🇿🇦</span><span class="market-name">South Africa</span></div>
+      <div class="market-item"><span class="market-flag">🇲🇾</span><span class="market-name">Malaysia</span></div>
+      <div class="market-item"><span class="market-flag">🇳🇱</span><span class="market-name">Netherlands</span></div>
+      <div class="market-item"><span class="market-flag">🇨🇦</span><span class="market-name">Canada</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════ -->
+<section class="section testimonials-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Client Feedback</div>
+      <h2 class="section-title">Trusted by Industry Professionals</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"We've been sourcing grout sleeves and end plates from ProConnect for four years. Dimensional accuracy is consistently excellent — critical for our automated production lines."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MK</div>
+          <div>
+            <div class="testimonial-name">Michael K.</div>
+            <div class="testimonial-role">Procurement Manager · Precast Plant, Germany</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"Lead time and documentation are always spot-on. The team helped us specify the correct lifting anchor system for a challenging high-rise panel project in Dubai."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JS</div>
+          <div>
+            <div class="testimonial-name">Jason S.</div>
+            <div class="testimonial-role">Structural Engineer · Construction Group, UAE</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"Competitive pricing on large-volume orders, and the quality never drops. Mill certs and test reports arrive before the shipment — no chasing required."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PL</div>
+          <div>
+            <div class="testimonial-name">Paul L.</div>
+            <div class="testimonial-role">Head of Purchasing · Modular Buildings, Australia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ════════════════════════════════════ -->
+<div class="cta-band">
+  <h2 class="reveal">Ready to Source Your Next Project?</h2>
+  <p class="reveal">Send us your BOM or technical drawings and receive a competitive quote within 24 hours.</p>
+  <div class="cta-actions reveal">
+    <a href="contact.html" class="btn-primary">Get a Quote</a>
+    <a href="products.html" class="btn-ghost">Download Catalog</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">PROCONNECT</span>
+            <span class="logo-sub">Fasteners &amp; Connectors</span>
+          </div>
+        </a>
+        <p>Specialist manufacturer of engineered connection systems for precast concrete. Supplying contractors, designers, and distributors worldwide since 2009.</p>
+        <div class="contact-info">
+          <a href="mailto:sales@proconnect-fasteners.com">✉ sales@proconnect-fasteners.com</a>
+          <a href="tel:+8613800000000">📞 +86 138 0000 0000</a>
+          <span style="color:var(--clr-muted);font-size:.83rem;">💬 WeChat / WhatsApp available</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html#bolts">High-Strength Bolts</a></li>
+          <li><a href="products.html#endplates">Anchor End Plates</a></li>
+          <li><a href="products.html#sleeves">Coupling Sleeves</a></li>
+          <li><a href="products.html#anchors">Lifting Anchors</a></li>
+          <li><a href="products.html#accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#quality">Quality & Certifications</a></li>
+          <li><a href="about.html#factory">Manufacturing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#rfq">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Standards</h4>
+        <ul>
+          <li><a href="#">EN 14399 Compliance</a></li>
+          <li><a href="#">ASTM A307 / A325</a></li>
+          <li><a href="#">ISO 898-1 Strength</a></li>
+          <li><a href="#">CE Marked Products</a></li>
+          <li><a href="#">Third-Party Testing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 ProConnect Fasteners. All rights reserved.</div>
+      <div class="footer-badges">
+        <span class="footer-badge">ISO 9001:2015</span>
+        <span class="footer-badge">CE Mark</span>
+        <span class="footer-badge">ASTM A307</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
