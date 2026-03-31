@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | ProConnect Fasteners</title>
+  <meta name="description" content="15 years manufacturing precast concrete connection systems. ISO 9001 certified factory. Learn about our capabilities, quality systems and global track record." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-bg: #0a0c10; --clr-surface: #111318; --clr-surface2: #181c22;
+      --clr-border: #232830; --clr-accent: #e8a020; --clr-accent2: #f0b840;
+      --clr-text: #e8eaf0; --clr-muted: #8a90a0; --clr-white: #ffffff;
+      --font-body: 'Inter', sans-serif; --font-heading: 'Barlow Condensed', sans-serif;
+      --max-w: 1280px; --radius: 4px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--clr-bg); color: var(--clr-text); font-family: var(--font-body); line-height: 1.6; }
+
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(10,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--clr-border); }
+    .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 38px; height: 38px; background: var(--clr-accent); display: flex; align-items: center; justify-content: center; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+    .logo-mark svg { width: 20px; height: 20px; fill: #000; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.04em; }
+    .logo-sub { font-size: 0.6rem; color: var(--clr-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { color: var(--clr-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--clr-text); }
+    .nav-cta { background: var(--clr-accent); color: #000; padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background .2s; }
+    .nav-cta:hover { background: var(--clr-accent2); }
+
+    /* Hero */
+    .page-hero {
+      position: relative; overflow: hidden;
+      padding: 6rem 2rem 5rem;
+      background: linear-gradient(135deg, var(--clr-surface) 0%, var(--clr-bg) 100%);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .page-hero::before {
+      content: ''; position: absolute; right: -10%; top: -20%;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 1rem; }
+    .page-label::before { content:''; display:block; width:20px; height:2px; background:var(--clr-accent); }
+    .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 700; color: var(--clr-white); line-height: 1.05; }
+    .page-hero p { font-size: 1rem; color: var(--clr-muted); margin-top: 1rem; line-height: 1.8; }
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--clr-border); }
+    .metric { background: var(--clr-surface2); padding: 2rem; }
+    .metric-num { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; color: var(--clr-accent); line-height: 1; }
+    .metric-label { font-size: 0.78rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; }
+
+    /* Sections */
+    .section { padding: 5.5rem 2rem; }
+    .section-inner { max-width: var(--max-w); margin: 0 auto; }
+    .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 0.75rem; }
+    .section-label::before { content:''; display:block; width:20px; height:2px; background:var(--clr-accent); }
+    .section-title { font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--clr-white); line-height: 1.1; }
+    .section-sub { font-size: 1rem; color: var(--clr-muted); max-width: 560px; margin-top: 0.75rem; line-height: 1.75; }
+    .divider { height: 1px; background: var(--clr-border); }
+
+    /* Two-col text + image */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .body-text p { font-size: 0.95rem; color: var(--clr-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .body-text p:last-child { margin-bottom: 0; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2.5rem; margin-top: 2.5rem; }
+    .timeline::before { content:''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--clr-border); }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-item::before { content:''; position: absolute; left: -2.5rem; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--clr-accent); border: 2px solid var(--clr-bg); }
+    .timeline-year { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--clr-accent); letter-spacing: 0.1em; }
+    .timeline-event { font-size: 0.9rem; font-weight: 600; color: var(--clr-white); margin-top: 2px; }
+    .timeline-detail { font-size: 0.82rem; color: var(--clr-muted); margin-top: 4px; line-height: 1.6; }
+
+    /* Factory capabilities */
+    .capabilities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--clr-border); margin-top: 3rem; }
+    .cap-item { background: var(--clr-surface); padding: 2rem; }
+    .cap-icon { font-size: 1.75rem; margin-bottom: 1rem; display: block; }
+    .cap-title { font-size: 0.95rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.5rem; }
+    .cap-desc { font-size: 0.82rem; color: var(--clr-muted); line-height: 1.65; }
+
+    /* Quality section */
+    .quality-section { background: var(--clr-surface); }
+    .cert-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .cert-card { background: var(--clr-bg); border: 1px solid var(--clr-border); border-radius: 6px; padding: 1.75rem; text-align: center; }
+    .cert-badge-big { font-size: 0.65rem; font-weight: 900; letter-spacing: 0.12em; color: var(--clr-accent); text-transform: uppercase; background: rgba(232,160,32,0.1); border: 1px solid rgba(232,160,32,0.25); padding: 0.4rem 0.8rem; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
+    .cert-title { font-size: 0.92rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.4rem; }
+    .cert-desc { font-size: 0.78rem; color: var(--clr-muted); line-height: 1.6; }
+
+    /* QC process */
+    .qc-steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--clr-border); margin-top: 3rem; }
+    .qc-step { background: var(--clr-bg); padding: 1.75rem 1.25rem; text-align: center; position: relative; }
+    .qc-num { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--clr-border); }
+    .qc-icon { font-size: 1.5rem; margin: 0.5rem 0; display: block; }
+    .qc-title { font-size: 0.8rem; font-weight: 700; color: var(--clr-white); }
+    .qc-desc { font-size: 0.72rem; color: var(--clr-muted); margin-top: 4px; line-height: 1.5; }
+
+    /* Team */
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+    .team-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 6px; overflow: hidden; }
+    .team-avatar { height: 200px; background: linear-gradient(135deg, var(--clr-surface2), var(--clr-border)); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .team-info { padding: 1.5rem; }
+    .team-name { font-size: 1rem; font-weight: 700; color: var(--clr-white); }
+    .team-role { font-size: 0.72rem; color: var(--clr-accent); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+    .team-bio { font-size: 0.82rem; color: var(--clr-muted); margin-top: 0.75rem; line-height: 1.65; }
+
+    /* CTA */
+    .cta-band { background: var(--clr-accent); padding: 4rem 2rem; text-align: center; }
+    .cta-band h2 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: #000; }
+    .cta-band p { color: rgba(0,0,0,.6); font-size: 0.95rem; margin: 0.6rem auto 1.75rem; max-width: 480px; }
+    .btn-dark { background: #000; color: var(--clr-accent); padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); display: inline-block; transition: background .2s; }
+    .btn-dark:hover { background: #1a1a1a; }
+    .btn-white { background: white; color: #000; padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); display: inline-block; margin-left: 1rem; transition: opacity .2s; }
+    .btn-white:hover { opacity: 0.85; }
+
+    .footer { background: var(--clr-bg); padding: 3rem 2rem 2rem; border-top: 1px solid var(--clr-border); }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.78rem; color: var(--clr-muted); }
+    .footer-nav { display: flex; gap: 1.5rem; }
+    .footer-nav a { font-size: 0.78rem; color: var(--clr-muted); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: var(--clr-text); }
+
+    @media (max-width: 1024px) { .two-col { grid-template-columns: 1fr; gap: 2.5rem; } .page-hero-inner { grid-template-columns: 1fr; gap: 3rem; } .cert-grid { grid-template-columns: 1fr 1fr; } .capabilities-grid { grid-template-columns: 1fr 1fr; } .qc-steps { grid-template-columns: repeat(3,1fr); } .team-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .metrics-grid { grid-template-columns: 1fr 1fr; } .cert-grid { grid-template-columns: 1fr; } .qc-steps { grid-template-columns: 1fr 1fr; } .team-grid { grid-template-columns: 1fr; } }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></div>
+      <div class="logo-text"><span class="logo-name">PROCONNECT</span><span class="logo-sub">Fasteners &amp; Connectors</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Request Quote</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="page-label reveal">About ProConnect</div>
+      <h1 class="reveal">Precision. Quality. <span style="color:var(--clr-accent)">Reliability.</span></h1>
+      <p class="reveal">Founded in 2009, ProConnect Fasteners has grown from a regional hardware supplier to a specialist manufacturer serving precast concrete producers, structural engineers, and building contractors in over 80 countries. Every product leaves our facility with traceable material certification and load-tested performance data.</p>
+    </div>
+    <div class="metrics-grid reveal">
+      <div class="metric"><div class="metric-num">2009</div><div class="metric-label">Year Founded</div></div>
+      <div class="metric"><div class="metric-num">80+</div><div class="metric-label">Export Markets</div></div>
+      <div class="metric"><div class="metric-num">500+</div><div class="metric-label">Active Clients</div></div>
+      <div class="metric"><div class="metric-num">120k㎡</div><div class="metric-label">Factory Floor Area</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Our story -->
+<section class="section" id="story">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Built on Engineering Integrity</h2>
+        <div class="body-text" style="margin-top:1.5rem;">
+          <p>ProConnect began as a small bolt machining operation in Shandong Province, China, supplying standard fasteners to local construction markets. From the outset, our founding engineers focused on dimensional accuracy and material traceability — values that remain central to our culture today.</p>
+          <p>As precast concrete construction expanded globally through the 2010s, we recognized the need for a dedicated supplier of structural connection components who understood both the engineering requirements and the production realities of precast factories. We invested in CNC turning centers, robotic welding, and a full in-house testing lab to serve this specialized market.</p>
+          <p>Today our 120,000 m² facility produces over 50 million connection components annually, exported to projects from residential towers in Singapore to infrastructure programs in the Middle East and transport networks across Europe.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2009</div>
+            <div class="timeline-event">Company Founded</div>
+            <div class="timeline-detail">Established in Shandong with 20 staff and a focus on precision bolt manufacturing.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-event">ISO 9001 Certification</div>
+            <div class="timeline-detail">First quality management certification. Introduced full material traceability across all product lines.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-event">Precast Specialization</div>
+            <div class="timeline-detail">Launched dedicated precast connection product range. First export orders to Germany and Australia.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-event">CE Mark Attained</div>
+            <div class="timeline-detail">European CE certification on lifting anchor and structural bolt ranges. Major European accounts established.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-event">Factory Expansion</div>
+            <div class="timeline-detail">New 80,000 m² production hall commissioned. Robotic welding lines for end plates and anchor assemblies.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-event">500+ Clients, 80+ Countries</div>
+            <div class="timeline-detail">Reached milestone global footprint. New engineering team dedicated to custom connection system design.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Manufacturing -->
+<section class="section" id="factory">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Manufacturing</div>
+      <h2 class="section-title">Production Capabilities</h2>
+      <p class="section-sub">120,000 m² of advanced manufacturing infrastructure with in-house engineering, production and quality control.</p>
+    </div>
+    <div class="capabilities-grid">
+      <div class="cap-item reveal">
+        <span class="cap-icon">⚙️</span>
+        <div class="cap-title">CNC Precision Machining</div>
+        <div class="cap-desc">40 CNC turning and milling centres achieving ±0.05mm tolerances. All critical bolt dimensions measured via automated vision systems before dispatch.</div>
+      </div>
+      <div class="cap-item reveal">
+        <span class="cap-icon">🔥</span>
+        <div class="cap-title">Robotic Welding</div>
+        <div class="cap-desc">12 robotic welding stations for anchor plate assembly. Consistent weld penetration and repeatability across high-volume production runs.</div>
+      </div>
+      <div class="cap-item reveal">
+        <span class="cap-icon">🏭</span>
+        <div class="cap-title">Hot-Dip Galvanizing</div>
+        <div class="cap-desc">On-site HDG bath to EN ISO 1461. Minimum 45µm zinc coat thickness. Self-controlled throughout for traceability — no outsourcing of critical surface treatments.</div>
+      </div>
+      <div class="cap-item reveal">
+        <span class="cap-icon">🔬</span>
+        <div class="cap-title">In-House Testing Lab</div>
+        <div class="cap-desc">100T universal tensile testing machine, hardness testers, coating thickness gauges, salt spray chamber. All test reports issued with shipment.</div>
+      </div>
+      <div class="cap-item reveal">
+        <span class="cap-icon">🏗️</span>
+        <div class="cap-title">Custom Fabrication</div>
+        <div class="cap-desc">Laser cutting, press braking and assembly for bespoke anchor plate configurations. From DXF drawings to finished component in under 10 working days.</div>
+      </div>
+      <div class="cap-item reveal">
+        <span class="cap-icon">📦</span>
+        <div class="cap-title">Export Packaging & Logistics</div>
+        <div class="cap-desc">Purpose-built packing for sea freight (FCL/LCL). In-house freight forwarding coordination from Qingdao, Shanghai or Tianjin. Full export documentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Quality -->
+<section class="section quality-section" id="quality">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Quality &amp; Compliance</div>
+      <h2 class="section-title">Certified to International Standards</h2>
+      <p class="section-sub">Our quality management system is certified by Bureau Veritas. Products are tested and documented to meet global structural engineering requirements.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-badge-big">ISO 9001:2015</div>
+        <div class="cert-title">Quality Management System</div>
+        <div class="cert-desc">Full QMS certification covering design, production, testing, and supply chain management. Annual third-party audits by Bureau Veritas.</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge-big">CE Mark</div>
+        <div class="cert-title">European Conformity</div>
+        <div class="cert-desc">CE marking on structural bolt and lifting anchor product ranges for supply to EEA construction projects. Declaration of Performance available.</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge-big">EN 14399</div>
+        <div class="cert-title">Structural Bolt Standard</div>
+        <div class="cert-desc">Full compliance with EN 14399-4 HV and EN 14399-6 for high-strength structural bolt sets for precast and steel construction.</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge-big">EN 13155</div>
+        <div class="cert-title">Lifting Equipment Safety</div>
+        <div class="cert-desc">Lifting anchor and erection hardware certified to EN 13155 with independent load testing. FEM calculation reports available per project.</div>
+      </div>
+    </div>
+    <div class="qc-steps">
+      <div class="qc-step reveal">
+        <div class="qc-num">01</div>
+        <span class="qc-icon">📋</span>
+        <div class="qc-title">Material Intake</div>
+        <div class="qc-desc">Mill certs checked, PMI testing on 100% of incoming steel coils and bar stock.</div>
+      </div>
+      <div class="qc-step reveal">
+        <div class="qc-num">02</div>
+        <span class="qc-icon">🔧</span>
+        <div class="qc-title">In-Process Inspection</div>
+        <div class="qc-desc">Dimensional checks every 50 pieces during machining. Weld inspection per AWS D1.1.</div>
+      </div>
+      <div class="qc-step reveal">
+        <div class="qc-num">03</div>
+        <span class="qc-icon">🔬</span>
+        <div class="qc-title">Tensile & Hardness Test</div>
+        <div class="qc-desc">Minimum 3 specimens per batch tested to 100T. Vickers hardness verified.</div>
+      </div>
+      <div class="qc-step reveal">
+        <div class="qc-num">04</div>
+        <span class="qc-icon">🛡️</span>
+        <div class="qc-title">Surface Inspection</div>
+        <div class="qc-desc">Coating thickness measurement every lot. Salt spray testing per ASTM B117 on samples.</div>
+      </div>
+      <div class="qc-step reveal">
+        <div class="qc-num">05</div>
+        <span class="qc-icon">📦</span>
+        <div class="qc-title">Pre-Shipment Check</div>
+        <div class="qc-desc">Quantity verification, packaging audit, documentation pack compiled and dispatched with order.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Work With Us</h2>
+  <p>Whether you need standard connection hardware or custom engineered components, we're ready to support your next project.</p>
+  <a href="contact.html" class="btn-dark">Contact Our Team</a>
+  <a href="products.html" class="btn-white">View Products</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 ProConnect Fasteners. All rights reserved.</div>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
